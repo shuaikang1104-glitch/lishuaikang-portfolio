@@ -1,0 +1,2865 @@
+{
+  "schema": "ps2web.executable-hero-spec",
+  "schemaVersion": "0.2",
+  "benchmark": {
+    "viewportWidthPx": 1920,
+    "viewportHeightPx": 1136,
+    "deviceScaleFactor": 1,
+    "bodyMarginPx": 0,
+    "overflow": "hidden"
+  },
+  "compilerRules": {
+    "coordinateSystem": "All element coordinates are flattened to viewport/document coordinates. Do NOT nest offsets again.",
+    "geometry": "CSS left/top/width/height are executable values, not hints.",
+    "groups": "Structural groups must not introduce layout, padding, margin, flex/grid, or coordinate offsets.",
+    "text": "Use typography.fontSizePx directly for this benchmark. Width/height are visual validation bounds, not containers that should wrap/reflow text.",
+    "crop": "Viewport clips at 1920x1136. Preserve overflow/crop.",
+    "fallback": "If a field is unresolved, report it; do not infer a replacement layout."
+  },
+  "elements": [
+    {
+      "id": 1377,
+      "sourceName": "首屏",
+      "type": "group",
+      "sourceParentId": null,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": -35.0,
+        "topPx": 22.0,
+        "widthPx": 1955.0,
+        "heightPx": 1213.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 1,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": -35,
+          "y": 22,
+          "width": 1955,
+          "height": 1213,
+          "right": 1920,
+          "bottom": 1235
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 48,
+      "sourceName": "装饰圆圈",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1377,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 91.0,
+        "topPx": 269.0,
+        "widthPx": 1738.0,
+        "heightPx": 774.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 2,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": {
+          "widthPx": 2.0,
+          "style": "solid",
+          "color": "#0D63ED",
+          "opacity": 1.0
+        },
+        "borderRadius": "50%"
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 91,
+          "y": 269,
+          "width": 1738,
+          "height": 774,
+          "right": 1829,
+          "bottom": 1043
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 1373,
+      "sourceName": "方框",
+      "type": "group",
+      "sourceParentId": 1377,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 0.0,
+        "topPx": 184.0,
+        "widthPx": 1920.0,
+        "heightPx": 861.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 3,
+        "overflow": "hidden",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 0,
+          "y": 184,
+          "width": 1920,
+          "height": 861,
+          "right": 1920,
+          "bottom": 1045
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 56,
+      "sourceName": "设 拷贝 2",
+      "type": "text",
+      "sourceParentId": 1373,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 486.0,
+        "topPx": 184.0,
+        "widthPx": 967.0,
+        "heightPx": 759.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 4,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "设",
+        "fontFamily": "WuHanYingXiongTi",
+        "fontPostScriptName": "WuHanYingXiongTi-Regular",
+        "fontStyleName": "Regular",
+        "fontSizePx": 1112.779,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#CEC6BA",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 486,
+          "y": 184,
+          "width": 967,
+          "height": 759,
+          "right": 1453,
+          "bottom": 943
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "reference-png-confirmed",
+          "reason": "reference PNG visibly shows the oversized Chinese glyph inside the center composition"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "sourceName": "Brand Upgrade Case",
+      "type": "text",
+      "sourceParentId": 1373,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 45.0,
+        "topPx": 947.0,
+        "widthPx": 1409.0,
+        "heightPx": 98.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 5,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "Brand Upgrade Case",
+        "fontFamily": "Blinker",
+        "fontPostScriptName": "Blinker-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 150.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#0C45A6",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "masks": {
+        "hasUserMask": true,
+        "hasVectorMask": false,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 45,
+          "y": 947,
+          "width": 1409,
+          "height": 98,
+          "right": 1454,
+          "bottom": 1045
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "reference-png-confirmed",
+          "reason": "reference PNG visibly shows BRAND UPGRADE CASE"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "sourceName": "Brand Marketing Case",
+      "type": "text",
+      "sourceParentId": 1373,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 331.0,
+        "topPx": 265.0,
+        "widthPx": 1551.0,
+        "heightPx": 98.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 6,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "Brand Marketing Case",
+        "fontFamily": "Blinker",
+        "fontPostScriptName": "Blinker-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 150.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#0C45A6",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "masks": {
+        "hasUserMask": true,
+        "hasVectorMask": false,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 331,
+          "y": 265,
+          "width": 1551,
+          "height": 98,
+          "right": 1882,
+          "bottom": 363
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "reference-png-confirmed",
+          "reason": "reference PNG visibly shows BRAND MARKETING CASE"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "sourceName": "组 1",
+      "type": "group",
+      "sourceParentId": 1373,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 0.0,
+        "topPx": 267.0,
+        "widthPx": 1920.0,
+        "heightPx": 777.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 7,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 0,
+          "y": 267,
+          "width": 1920,
+          "height": 777,
+          "right": 1920,
+          "bottom": 1044
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "sourceName": "矩形 2 拷贝 2",
+      "type": "shape-solid-fill",
+      "sourceParentId": 19,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 0.0,
+        "topPx": 267.0,
+        "widthPx": 516.0,
+        "heightPx": 777.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 8,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#000000",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 0,
+          "y": 267,
+          "width": 516,
+          "height": 777,
+          "right": 516,
+          "bottom": 1044
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "sourceName": "矩形 2 拷贝",
+      "type": "shape-solid-fill",
+      "sourceParentId": 19,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1404.0,
+        "topPx": 267.0,
+        "widthPx": 516.0,
+        "heightPx": 777.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 9,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#000000",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1404,
+          "y": 267,
+          "width": 516,
+          "height": 777,
+          "right": 1920,
+          "bottom": 1044
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "sourceName": "矩形 2",
+      "type": "shape-solid-fill",
+      "sourceParentId": 19,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 552.0,
+        "topPx": 267.0,
+        "widthPx": 817.0,
+        "heightPx": 777.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 10,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#000000",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 552,
+          "y": 267,
+          "width": 817,
+          "height": 777,
+          "right": 1369,
+          "bottom": 1044
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 1371,
+      "sourceName": "头图信息层",
+      "type": "group",
+      "sourceParentId": 1377,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 22.0,
+        "widthPx": 1810.0,
+        "heightPx": 222.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 11,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 22,
+          "width": 1810,
+          "height": 222,
+          "right": 1871,
+          "bottom": 244
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 1365,
+      "sourceName": "标题",
+      "type": "group",
+      "sourceParentId": 1371,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 708.0,
+        "topPx": 22.0,
+        "widthPx": 526.0,
+        "heightPx": 222.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 12,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 708,
+          "y": 22,
+          "width": 526,
+          "height": 222,
+          "right": 1234,
+          "bottom": 244
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "sourceName": "矩形 1",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1365,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 834.0,
+        "topPx": 231.0,
+        "widthPx": 63.0,
+        "heightPx": 1.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 13,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#000000",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 834,
+          "y": 231,
+          "width": 63,
+          "height": 1,
+          "right": 897,
+          "bottom": 232
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "sourceName": "2017               2026",
+      "type": "text",
+      "sourceParentId": 1365,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 763.0,
+        "topPx": 221.0,
+        "widthPx": 206.0,
+        "heightPx": 22.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 14,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "2017               2026",
+        "fontFamily": "Bodoni 72",
+        "fontPostScriptName": "BodoniSvtyTwoITCTT-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 30.625,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 763,
+          "y": 221,
+          "width": 206,
+          "height": 22,
+          "right": 969,
+          "bottom": 243
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "sourceName": "杭州·深圳·上海",
+      "type": "text",
+      "sourceParentId": 1365,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 999.0,
+        "topPx": 220.0,
+        "widthPx": 166.0,
+        "heightPx": 24.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 15,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "杭州·深圳·上海",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Heavy",
+        "fontStyleName": "Heavy",
+        "fontSizePx": 24.747,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 999,
+          "y": 220,
+          "width": 166,
+          "height": 24,
+          "right": 1165,
+          "bottom": 244
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "sourceName": "· Annual Collection of Brand Marketing Works ·",
+      "type": "text",
+      "sourceParentId": 1365,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 754.0,
+        "topPx": 190.0,
+        "widthPx": 420.0,
+        "heightPx": 17.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 16,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "· Annual Collection of Brand Marketing Works ·",
+        "fontFamily": "Marion",
+        "fontPostScriptName": "Marion-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 19.588,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 754,
+          "y": 190,
+          "width": 420,
+          "height": 17,
+          "right": 1174,
+          "bottom": 207
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "sourceName": "作品精選集錄",
+      "type": "text",
+      "sourceParentId": 1365,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 708.0,
+        "topPx": 88.0,
+        "widthPx": 526.0,
+        "heightPx": 84.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 17,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "作品精選集錄",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Heavy",
+        "fontStyleName": "Heavy",
+        "fontSizePx": 88.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 708,
+          "y": 88,
+          "width": 526,
+          "height": 84,
+          "right": 1234,
+          "bottom": 172
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "sourceName": "品牌營銷體驗",
+      "type": "text",
+      "sourceParentId": 1365,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 809.0,
+        "topPx": 22.0,
+        "widthPx": 326.0,
+        "heightPx": 53.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 18,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "品牌營銷體驗",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 55.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 809,
+          "y": 22,
+          "width": 326,
+          "height": 53,
+          "right": 1135,
+          "bottom": 75
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 1369,
+      "sourceName": "头部文案",
+      "type": "group",
+      "sourceParentId": 1371,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 1810.0,
+        "heightPx": 220.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 19,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 23,
+          "width": 1810,
+          "height": 220,
+          "right": 1871,
+          "bottom": 243
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 1367,
+      "sourceName": "组 9",
+      "type": "group",
+      "sourceParentId": 1369,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 403.0,
+        "heightPx": 219.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 20,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 23,
+          "width": 403,
+          "height": 219,
+          "right": 464,
+          "bottom": 242
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 32,
+      "sourceName": "组 2",
+      "type": "group",
+      "sourceParentId": 1367,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 98.0,
+        "widthPx": 153.0,
+        "heightPx": 60.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 21,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 98,
+          "width": 153,
+          "height": 60,
+          "right": 214,
+          "bottom": 158
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 29,
+      "sourceName": "康",
+      "type": "text",
+      "sourceParentId": 32,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 158.0,
+        "topPx": 101.0,
+        "widthPx": 53.0,
+        "heightPx": 53.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 22,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "康",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 55.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 158,
+          "y": 101,
+          "width": 53,
+          "height": 53,
+          "right": 211,
+          "bottom": 154
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 28,
+      "sourceName": "椭圆 1 拷贝",
+      "type": "shape-solid-fill",
+      "sourceParentId": 32,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 154.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 23,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#0D63ED",
+        "border": {
+          "widthPx": 2.0,
+          "style": "solid",
+          "color": "#0B0305",
+          "opacity": 1.0
+        },
+        "borderRadius": "50%"
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 154,
+          "y": 98,
+          "width": 60,
+          "height": 60,
+          "right": 214,
+          "bottom": 158
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 31,
+      "sourceName": "帅",
+      "type": "text",
+      "sourceParentId": 32,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 113.0,
+        "topPx": 101.0,
+        "widthPx": 50.0,
+        "heightPx": 53.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 24,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "帅",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 55.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 113,
+          "y": 101,
+          "width": 50,
+          "height": 53,
+          "right": 163,
+          "bottom": 154
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 30,
+      "sourceName": "椭圆 1 拷贝 2",
+      "type": "shape-solid-fill",
+      "sourceParentId": 32,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 107.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 25,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#0D63ED",
+        "border": {
+          "widthPx": 2.0,
+          "style": "solid",
+          "color": "#0B0305",
+          "opacity": 1.0
+        },
+        "borderRadius": "50%"
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 107,
+          "y": 98,
+          "width": 60,
+          "height": 60,
+          "right": 167,
+          "bottom": 158
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 25,
+      "sourceName": "李",
+      "type": "text",
+      "sourceParentId": 32,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 66.0,
+        "topPx": 102.0,
+        "widthPx": 53.0,
+        "heightPx": 53.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 26,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "李",
+        "fontFamily": "Source Han Serif CN",
+        "fontPostScriptName": "SourceHanSerifCN-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 55.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 66,
+          "y": 102,
+          "width": 53,
+          "height": 53,
+          "right": 119,
+          "bottom": 155
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "sourceName": "椭圆 1",
+      "type": "shape-solid-fill",
+      "sourceParentId": 32,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 27,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#0D63ED",
+        "border": {
+          "widthPx": 2.0,
+          "style": "solid",
+          "color": "#0B0305",
+          "opacity": 1.0
+        },
+        "borderRadius": "50%"
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 98,
+          "width": 60,
+          "height": 60,
+          "right": 121,
+          "bottom": 158
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 58,
+      "sourceName": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门",
+      "type": "text",
+      "sourceParentId": 1367,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 184.0,
+        "widthPx": 403.0,
+        "heightPx": 58.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 28,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门店等场景，并熟练运用 AIGC 提升创意与执行效率。",
+        "fontFamily": "Source Han Sans CN",
+        "fontPostScriptName": "SourceHanSansCN-Regular",
+        "fontStyleName": "Regular",
+        "fontSizePx": 14.0,
+        "lineHeightPx": 22.0,
+        "letterSpacingEm": null,
+        "color": null,
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 184,
+          "width": 403,
+          "height": 58,
+          "right": 464,
+          "bottom": 242
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 23,
+      "sourceName": "2026.01 web ",
+      "type": "text",
+      "sourceParentId": 1367,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 46.0,
+        "widthPx": 97.0,
+        "heightPx": 12.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 29,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "2026.01 web\n",
+        "fontFamily": "Marion",
+        "fontPostScriptName": "Marion-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 16.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 46,
+          "width": 97,
+          "height": 12,
+          "right": 158,
+          "bottom": 58
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "sourceName": "Personal Design Portfolio · Li Shuaikang",
+      "type": "text",
+      "sourceParentId": 1367,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 359.0,
+        "heightPx": 17.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 30,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "Personal Design Portfolio · Li Shuaikang",
+        "fontFamily": "Marion",
+        "fontPostScriptName": "Marion-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 19.588,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 61,
+          "y": 23,
+          "width": 359,
+          "height": 17,
+          "right": 420,
+          "bottom": 40
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 43,
+      "sourceName": "春晚义乌分会场视觉",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1540.0,
+        "topPx": 215.0,
+        "widthPx": 161.0,
+        "heightPx": 17.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 31,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "春晚义乌分会场视觉",
+        "fontFamily": "Source Han Sans CN",
+        "fontPostScriptName": "SourceHanSansCN-Medium",
+        "fontStyleName": "Medium",
+        "fontSizePx": 18.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1540,
+          "y": 215,
+          "width": 161,
+          "height": 17,
+          "right": 1701,
+          "bottom": 232
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 42,
+      "sourceName": "矩形 3 拷贝 4",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1369,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1520.0,
+        "topPx": 205.0,
+        "widthPx": 199.0,
+        "heightPx": 38.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 32,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": {
+          "widthPx": 1.0,
+          "style": "solid",
+          "color": "#000000",
+          "opacity": 1.0
+        },
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1520,
+          "y": 205,
+          "width": 199,
+          "height": 38,
+          "right": 1719,
+          "bottom": 243
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 41,
+      "sourceName": "品牌营销KV",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1752.0,
+        "topPx": 215.0,
+        "widthPx": 94.0,
+        "heightPx": 18.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 33,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "品牌营销KV",
+        "fontFamily": "Source Han Sans CN",
+        "fontPostScriptName": "SourceHanSansCN-Medium",
+        "fontStyleName": "Medium",
+        "fontSizePx": 18.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1752,
+          "y": 215,
+          "width": 94,
+          "height": 18,
+          "right": 1846,
+          "bottom": 233
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 40,
+      "sourceName": "矩形 3 拷贝 3",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1369,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1730.0,
+        "topPx": 205.0,
+        "widthPx": 141.0,
+        "heightPx": 38.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 34,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": {
+          "widthPx": 1.0,
+          "style": "solid",
+          "color": "#000000",
+          "opacity": 1.0
+        },
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1730,
+          "y": 205,
+          "width": 141,
+          "height": 38,
+          "right": 1871,
+          "bottom": 243
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 39,
+      "sourceName": "朱炳仁銅品牌升級案例",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1672.0,
+        "topPx": 171.0,
+        "widthPx": 179.0,
+        "heightPx": 18.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 35,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "朱炳仁銅品牌升級案例",
+        "fontFamily": "Source Han Sans CN",
+        "fontPostScriptName": "SourceHanSansCN-Medium",
+        "fontStyleName": "Medium",
+        "fontSizePx": 18.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1672,
+          "y": 171,
+          "width": 179,
+          "height": 18,
+          "right": 1851,
+          "bottom": 189
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 38,
+      "sourceName": "矩形 3 拷贝 2",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1369,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1652.0,
+        "topPx": 161.0,
+        "widthPx": 219.0,
+        "heightPx": 38.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 36,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": {
+          "widthPx": 1.0,
+          "style": "solid",
+          "color": "#000000",
+          "opacity": 1.0
+        },
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1652,
+          "y": 161,
+          "width": 219,
+          "height": 38,
+          "right": 1871,
+          "bottom": 199
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 37,
+      "sourceName": "大型春秋拍賣會",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1494.0,
+        "topPx": 171.0,
+        "widthPx": 126.0,
+        "heightPx": 17.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 37,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "大型春秋拍賣會",
+        "fontFamily": "Source Han Sans CN",
+        "fontPostScriptName": "SourceHanSansCN-Medium",
+        "fontStyleName": "Medium",
+        "fontSizePx": 18.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1494,
+          "y": 171,
+          "width": 126,
+          "height": 17,
+          "right": 1620,
+          "bottom": 188
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 35,
+      "sourceName": "矩形 3",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1369,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1474.0,
+        "topPx": 161.0,
+        "widthPx": 167.0,
+        "heightPx": 38.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 38,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": {
+          "widthPx": 1.0,
+          "style": "solid",
+          "color": "#000000",
+          "opacity": 1.0
+        },
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1474,
+          "y": 161,
+          "width": 167,
+          "height": 38,
+          "right": 1641,
+          "bottom": 199
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 47,
+      "sourceName": "矩形 4",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1369,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1803.0,
+        "topPx": 134.0,
+        "widthPx": 11.0,
+        "heightPx": 11.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 39,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#000000",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1803,
+          "y": 134,
+          "width": 11,
+          "height": 11,
+          "right": 1814,
+          "bottom": 145
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 46,
+      "sourceName": "menu",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1817.0,
+        "topPx": 135.0,
+        "widthPx": 45.0,
+        "heightPx": 10.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 40,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "menu",
+        "fontFamily": "Marion",
+        "fontPostScriptName": "Marion-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 14.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1817,
+          "y": 135,
+          "width": 45,
+          "height": 10,
+          "right": 1862,
+          "bottom": 145
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 34,
+      "sourceName": ".Designer",
+      "type": "text",
+      "sourceParentId": 1369,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 1754.0,
+        "topPx": 23.0,
+        "widthPx": 111.0,
+        "heightPx": 14.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 41,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": ".Designer",
+        "fontFamily": "Marion",
+        "fontPostScriptName": "Marion-Bold",
+        "fontStyleName": "Bold",
+        "fontSizePx": 19.588,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#000000",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 1754,
+          "y": 23,
+          "width": 111,
+          "height": 14,
+          "right": 1865,
+          "bottom": 37
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 1375,
+      "sourceName": "灰色能力层-首屏",
+      "type": "group",
+      "sourceParentId": 1377,
+      "renderMode": "structural-group",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": -35.0,
+        "topPx": 1042.0,
+        "widthPx": 1955.0,
+        "heightPx": 94.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 42,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": -35,
+          "y": 1042,
+          "width": 1955,
+          "height": 94,
+          "right": 1920,
+          "bottom": 1136
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "structural",
+          "reason": "contains included descendant(s)"
+        }
+      }
+    },
+    {
+      "id": 52,
+      "sourceName": "Brand Design / Marketing Design / Experience Design",
+      "type": "text",
+      "sourceParentId": 1375,
+      "renderMode": "text",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": 754.0,
+        "topPx": 1084.0,
+        "widthPx": 389.0,
+        "heightPx": 16.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 43,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": {
+        "text": "Brand Design / Marketing Design / Experience Design",
+        "fontFamily": "Blinker",
+        "fontPostScriptName": "Blinker-Regular",
+        "fontStyleName": "Regular",
+        "fontSizePx": 18.0,
+        "lineHeightPx": null,
+        "letterSpacingEm": null,
+        "color": "#606060",
+        "whiteSpace": "pre",
+        "textBoxMode": "visual-bounds-anchored",
+        "transformPolicy": "baked-into-font-size-and-visual-bounds"
+      },
+      "appearance": {
+        "backgroundColor": null,
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": 754,
+          "y": 1084,
+          "width": 389,
+          "height": 16,
+          "right": 1143,
+          "bottom": 1100
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    },
+    {
+      "id": 51,
+      "sourceName": "矩形 5 拷贝",
+      "type": "shape-solid-fill",
+      "sourceParentId": 1375,
+      "renderMode": "shape",
+      "coordinateSpace": "viewport-absolute",
+      "css": {
+        "position": "absolute",
+        "leftPx": -35.0,
+        "topPx": 1042.0,
+        "widthPx": 1955.0,
+        "heightPx": 94.0,
+        "boxSizing": "border-box",
+        "opacity": 1.0,
+        "zIndex": 44,
+        "overflow": "visible",
+        "pointerEvents": "none"
+      },
+      "typography": null,
+      "appearance": {
+        "backgroundColor": "#262626",
+        "border": null,
+        "borderRadius": null
+      },
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "masks": {
+        "hasUserMask": true,
+        "hasVectorMask": true,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      },
+      "sourceEvidence": {
+        "visualBounds": {
+          "x": -35,
+          "y": 1042,
+          "width": 1955,
+          "height": 94,
+          "right": 1920,
+          "bottom": 1136
+        },
+        "renderDecision": {
+          "status": "include",
+          "evidence": "psd-visible-and-viewport-intersection",
+          "reason": "visible source layer intersects 1920x1136 benchmark"
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Serif_SC } from "next/font/google";
+import { Blinker, Geist, Geist_Mono, Noto_Serif_SC } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const blinker = Blinker({
+  weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-blinker",
+  display: "swap",
 });
 
 /** 中文标题与长文：Noto Serif SC（与 Geist 分工） */
@@ -34,11 +41,9 @@ export default function RootLayout({
   return (
     <html
       lang="zh-Hans"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoSerifSC.variable} h-full scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoSerifSC.variable} ${blinker.variable}`}
     >
-      <body className="min-h-full bg-[#010101] font-sans text-zinc-100">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

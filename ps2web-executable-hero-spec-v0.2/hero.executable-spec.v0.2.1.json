@@ -1,0 +1,4001 @@
+{
+  "schema": "ps2web.compiler.v0.2.1",
+  "version": "0.2.1",
+  "benchmark": {
+    "viewportWidthPx": 1920,
+    "viewportHeightPx": 1136,
+    "deviceScaleFactor": 1,
+    "bodyMarginPx": 0,
+    "overflow": "hidden"
+  },
+  "compilerRules": {
+    "translation": "Photoshop hierarchy -> local paint tree -> executable render tree",
+    "containerStrategy": "preserve parent/local paint order and clipping/mask semantics before browser stacking",
+    "geometryRule": "Do not flatten all bounds to CSS layout boxes; split by sourceType",
+    "textRule": "Text uses source text transform + typography metrics as independent translation rule",
+    "maskRule": "User/vector masks emit explicit renderStrategy and warnings if unsupported",
+    "noVisualTuning": true
+  },
+  "paintTree": {
+    "id": "document",
+    "sourceLayerId": null,
+    "sourcePath": "document",
+    "type": "document",
+    "children": [
+      {
+        "id": 1377,
+        "sourceLayerId": 1377,
+        "sourcePath": "首屏",
+        "sourceType": "group",
+        "parentId": null,
+        "children": [
+          {
+            "id": 48,
+            "sourceLayerId": 48,
+            "sourcePath": "装饰圆圈",
+            "sourceType": "shape-solid-fill",
+            "parentId": 1377,
+            "children": [],
+            "visibility": "visible",
+            "siblingOrder": 0,
+            "renderMode": "shape",
+            "clipping": false,
+            "mask": {
+              "userMask": false,
+              "vectorMask": true,
+              "userMaskEnabled": null,
+              "vectorMaskEnabled": true
+            },
+            "bounds": {
+              "x": 91,
+              "y": 269,
+              "width": 1738,
+              "height": 774
+            },
+            "transform": null,
+            "class": "leaf"
+          },
+          {
+            "id": 1373,
+            "sourceLayerId": 1373,
+            "sourcePath": "方框",
+            "sourceType": "group",
+            "parentId": 1377,
+            "children": [
+              {
+                "id": 56,
+                "sourceLayerId": 56,
+                "sourcePath": "设 拷贝 2",
+                "sourceType": "text",
+                "parentId": 1373,
+                "children": [],
+                "visibility": "visible",
+                "siblingOrder": 0,
+                "renderMode": "text",
+                "clipping": true,
+                "mask": {
+                  "userMask": false,
+                  "vectorMask": false,
+                  "userMaskEnabled": null,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 486,
+                  "y": 184,
+                  "width": 967,
+                  "height": 759
+                },
+                "transform": null,
+                "class": "leaf"
+              },
+              {
+                "id": 21,
+                "sourceLayerId": 21,
+                "sourcePath": "Brand Upgrade Case",
+                "sourceType": "text",
+                "parentId": 1373,
+                "children": [],
+                "visibility": "visible",
+                "siblingOrder": 1,
+                "renderMode": "text",
+                "clipping": true,
+                "mask": {
+                  "userMask": true,
+                  "vectorMask": false,
+                  "userMaskEnabled": true,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 45,
+                  "y": 947,
+                  "width": 1409,
+                  "height": 98
+                },
+                "transform": null,
+                "class": "leaf"
+              },
+              {
+                "id": 18,
+                "sourceLayerId": 18,
+                "sourcePath": "Brand Marketing Case",
+                "sourceType": "text",
+                "parentId": 1373,
+                "children": [],
+                "visibility": "visible",
+                "siblingOrder": 2,
+                "renderMode": "text",
+                "clipping": true,
+                "mask": {
+                  "userMask": true,
+                  "vectorMask": false,
+                  "userMaskEnabled": true,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 331,
+                  "y": 265,
+                  "width": 1551,
+                  "height": 98
+                },
+                "transform": null,
+                "class": "leaf"
+              },
+              {
+                "id": 19,
+                "sourceLayerId": 19,
+                "sourcePath": "组 1",
+                "sourceType": "group",
+                "parentId": 1373,
+                "children": [
+                  {
+                    "id": 17,
+                    "sourceLayerId": 17,
+                    "sourcePath": "矩形 2 拷贝 2",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 19,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 0,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 0,
+                      "y": 267,
+                      "width": 516,
+                      "height": 777
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 16,
+                    "sourceLayerId": 16,
+                    "sourcePath": "矩形 2 拷贝",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 19,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 1,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1404,
+                      "y": 267,
+                      "width": 516,
+                      "height": 777
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 15,
+                    "sourceLayerId": 15,
+                    "sourcePath": "矩形 2",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 19,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 2,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 552,
+                      "y": 267,
+                      "width": 817,
+                      "height": 777
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  }
+                ],
+                "visibility": "visible",
+                "siblingOrder": 3,
+                "renderMode": "structural-group",
+                "clipping": null,
+                "mask": {
+                  "userMask": false,
+                  "vectorMask": false,
+                  "userMaskEnabled": null,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 0,
+                  "y": 267,
+                  "width": 1920,
+                  "height": 777
+                },
+                "transform": null,
+                "class": "structural-group"
+              }
+            ],
+            "visibility": "visible",
+            "siblingOrder": 1,
+            "renderMode": "structural-group",
+            "clipping": null,
+            "mask": {
+              "userMask": false,
+              "vectorMask": false,
+              "userMaskEnabled": null,
+              "vectorMaskEnabled": null
+            },
+            "bounds": {
+              "x": 0,
+              "y": 184,
+              "width": 1920,
+              "height": 861
+            },
+            "transform": null,
+            "class": "structural-group"
+          },
+          {
+            "id": 1371,
+            "sourceLayerId": 1371,
+            "sourcePath": "头图信息层",
+            "sourceType": "group",
+            "parentId": 1377,
+            "children": [
+              {
+                "id": 1365,
+                "sourceLayerId": 1365,
+                "sourcePath": "标题",
+                "sourceType": "group",
+                "parentId": 1371,
+                "children": [
+                  {
+                    "id": 14,
+                    "sourceLayerId": 14,
+                    "sourcePath": "矩形 1",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 0,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 834,
+                      "y": 231,
+                      "width": 63,
+                      "height": 1
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 11,
+                    "sourceLayerId": 11,
+                    "sourcePath": "2017               2026",
+                    "sourceType": "text",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 1,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 763,
+                      "y": 221,
+                      "width": 206,
+                      "height": 22
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 12,
+                    "sourceLayerId": 12,
+                    "sourcePath": "杭州·深圳·上海",
+                    "sourceType": "text",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 2,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 999,
+                      "y": 220,
+                      "width": 166,
+                      "height": 24
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 9,
+                    "sourceLayerId": 9,
+                    "sourcePath": "· Annual Collection of Brand Marketing Works ·",
+                    "sourceType": "text",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 3,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 754,
+                      "y": 190,
+                      "width": 420,
+                      "height": 17
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 8,
+                    "sourceLayerId": 8,
+                    "sourcePath": "作品精選集錄",
+                    "sourceType": "text",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 4,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 708,
+                      "y": 88,
+                      "width": 526,
+                      "height": 84
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 7,
+                    "sourceLayerId": 7,
+                    "sourcePath": "品牌營銷體驗",
+                    "sourceType": "text",
+                    "parentId": 1365,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 5,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 809,
+                      "y": 22,
+                      "width": 326,
+                      "height": 53
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  }
+                ],
+                "visibility": "visible",
+                "siblingOrder": 0,
+                "renderMode": "structural-group",
+                "clipping": null,
+                "mask": {
+                  "userMask": false,
+                  "vectorMask": false,
+                  "userMaskEnabled": null,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 708,
+                  "y": 22,
+                  "width": 526,
+                  "height": 222
+                },
+                "transform": null,
+                "class": "structural-group"
+              },
+              {
+                "id": 1369,
+                "sourceLayerId": 1369,
+                "sourcePath": "头部文案",
+                "sourceType": "group",
+                "parentId": 1371,
+                "children": [
+                  {
+                    "id": 1367,
+                    "sourceLayerId": 1367,
+                    "sourcePath": "组 9",
+                    "sourceType": "group",
+                    "parentId": 1369,
+                    "children": [
+                      {
+                        "id": 32,
+                        "sourceLayerId": 32,
+                        "sourcePath": "组 2",
+                        "sourceType": "group",
+                        "parentId": 1367,
+                        "children": [
+                          {
+                            "id": 29,
+                            "sourceLayerId": 29,
+                            "sourcePath": "康",
+                            "sourceType": "text",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 0,
+                            "renderMode": "text",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": false,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": null
+                            },
+                            "bounds": {
+                              "x": 158,
+                              "y": 101,
+                              "width": 53,
+                              "height": 53
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          },
+                          {
+                            "id": 28,
+                            "sourceLayerId": 28,
+                            "sourcePath": "椭圆 1 拷贝",
+                            "sourceType": "shape-solid-fill",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 1,
+                            "renderMode": "shape",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": true,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": true
+                            },
+                            "bounds": {
+                              "x": 154,
+                              "y": 98,
+                              "width": 60,
+                              "height": 60
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          },
+                          {
+                            "id": 31,
+                            "sourceLayerId": 31,
+                            "sourcePath": "帅",
+                            "sourceType": "text",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 2,
+                            "renderMode": "text",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": false,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": null
+                            },
+                            "bounds": {
+                              "x": 113,
+                              "y": 101,
+                              "width": 50,
+                              "height": 53
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          },
+                          {
+                            "id": 30,
+                            "sourceLayerId": 30,
+                            "sourcePath": "椭圆 1 拷贝 2",
+                            "sourceType": "shape-solid-fill",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 3,
+                            "renderMode": "shape",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": true,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": true
+                            },
+                            "bounds": {
+                              "x": 107,
+                              "y": 98,
+                              "width": 60,
+                              "height": 60
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          },
+                          {
+                            "id": 25,
+                            "sourceLayerId": 25,
+                            "sourcePath": "李",
+                            "sourceType": "text",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 4,
+                            "renderMode": "text",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": false,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": null
+                            },
+                            "bounds": {
+                              "x": 66,
+                              "y": 102,
+                              "width": 53,
+                              "height": 53
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          },
+                          {
+                            "id": 24,
+                            "sourceLayerId": 24,
+                            "sourcePath": "椭圆 1",
+                            "sourceType": "shape-solid-fill",
+                            "parentId": 32,
+                            "children": [],
+                            "visibility": "visible",
+                            "siblingOrder": 5,
+                            "renderMode": "shape",
+                            "clipping": false,
+                            "mask": {
+                              "userMask": false,
+                              "vectorMask": true,
+                              "userMaskEnabled": null,
+                              "vectorMaskEnabled": true
+                            },
+                            "bounds": {
+                              "x": 61,
+                              "y": 98,
+                              "width": 60,
+                              "height": 60
+                            },
+                            "transform": null,
+                            "class": "leaf"
+                          }
+                        ],
+                        "visibility": "visible",
+                        "siblingOrder": 0,
+                        "renderMode": "structural-group",
+                        "clipping": null,
+                        "mask": {
+                          "userMask": false,
+                          "vectorMask": false,
+                          "userMaskEnabled": null,
+                          "vectorMaskEnabled": null
+                        },
+                        "bounds": {
+                          "x": 61,
+                          "y": 98,
+                          "width": 153,
+                          "height": 60
+                        },
+                        "transform": null,
+                        "class": "structural-group"
+                      },
+                      {
+                        "id": 58,
+                        "sourceLayerId": 58,
+                        "sourcePath": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门",
+                        "sourceType": "text",
+                        "parentId": 1367,
+                        "children": [],
+                        "visibility": "visible",
+                        "siblingOrder": 1,
+                        "renderMode": "text",
+                        "clipping": false,
+                        "mask": {
+                          "userMask": false,
+                          "vectorMask": false,
+                          "userMaskEnabled": null,
+                          "vectorMaskEnabled": null
+                        },
+                        "bounds": {
+                          "x": 61,
+                          "y": 184,
+                          "width": 403,
+                          "height": 58
+                        },
+                        "transform": null,
+                        "class": "leaf"
+                      },
+                      {
+                        "id": 23,
+                        "sourceLayerId": 23,
+                        "sourcePath": "2026.01 web ",
+                        "sourceType": "text",
+                        "parentId": 1367,
+                        "children": [],
+                        "visibility": "visible",
+                        "siblingOrder": 2,
+                        "renderMode": "text",
+                        "clipping": false,
+                        "mask": {
+                          "userMask": false,
+                          "vectorMask": false,
+                          "userMaskEnabled": null,
+                          "vectorMaskEnabled": null
+                        },
+                        "bounds": {
+                          "x": 61,
+                          "y": 46,
+                          "width": 97,
+                          "height": 12
+                        },
+                        "transform": null,
+                        "class": "leaf"
+                      },
+                      {
+                        "id": 22,
+                        "sourceLayerId": 22,
+                        "sourcePath": "Personal Design Portfolio · Li Shuaikang",
+                        "sourceType": "text",
+                        "parentId": 1367,
+                        "children": [],
+                        "visibility": "visible",
+                        "siblingOrder": 3,
+                        "renderMode": "text",
+                        "clipping": false,
+                        "mask": {
+                          "userMask": false,
+                          "vectorMask": false,
+                          "userMaskEnabled": null,
+                          "vectorMaskEnabled": null
+                        },
+                        "bounds": {
+                          "x": 61,
+                          "y": 23,
+                          "width": 359,
+                          "height": 17
+                        },
+                        "transform": null,
+                        "class": "leaf"
+                      }
+                    ],
+                    "visibility": "visible",
+                    "siblingOrder": 0,
+                    "renderMode": "structural-group",
+                    "clipping": null,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 61,
+                      "y": 23,
+                      "width": 403,
+                      "height": 219
+                    },
+                    "transform": null,
+                    "class": "structural-group"
+                  },
+                  {
+                    "id": 43,
+                    "sourceLayerId": 43,
+                    "sourcePath": "春晚义乌分会场视觉",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 1,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1540,
+                      "y": 215,
+                      "width": 161,
+                      "height": 17
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 42,
+                    "sourceLayerId": 42,
+                    "sourcePath": "矩形 3 拷贝 4",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 2,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1520,
+                      "y": 205,
+                      "width": 199,
+                      "height": 38
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 41,
+                    "sourceLayerId": 41,
+                    "sourcePath": "品牌营销KV",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 3,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1752,
+                      "y": 215,
+                      "width": 94,
+                      "height": 18
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 40,
+                    "sourceLayerId": 40,
+                    "sourcePath": "矩形 3 拷贝 3",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 4,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1730,
+                      "y": 205,
+                      "width": 141,
+                      "height": 38
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 39,
+                    "sourceLayerId": 39,
+                    "sourcePath": "朱炳仁銅品牌升級案例",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 5,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1672,
+                      "y": 171,
+                      "width": 179,
+                      "height": 18
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 38,
+                    "sourceLayerId": 38,
+                    "sourcePath": "矩形 3 拷贝 2",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 6,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1652,
+                      "y": 161,
+                      "width": 219,
+                      "height": 38
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 37,
+                    "sourceLayerId": 37,
+                    "sourcePath": "大型春秋拍賣會",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 7,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1494,
+                      "y": 171,
+                      "width": 126,
+                      "height": 17
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 35,
+                    "sourceLayerId": 35,
+                    "sourcePath": "矩形 3",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 8,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1474,
+                      "y": 161,
+                      "width": 167,
+                      "height": 38
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 47,
+                    "sourceLayerId": 47,
+                    "sourcePath": "矩形 4",
+                    "sourceType": "shape-solid-fill",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 9,
+                    "renderMode": "shape",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": true,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": true
+                    },
+                    "bounds": {
+                      "x": 1803,
+                      "y": 134,
+                      "width": 11,
+                      "height": 11
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 46,
+                    "sourceLayerId": 46,
+                    "sourcePath": "menu",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 10,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1817,
+                      "y": 135,
+                      "width": 45,
+                      "height": 10
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  },
+                  {
+                    "id": 34,
+                    "sourceLayerId": 34,
+                    "sourcePath": ".Designer",
+                    "sourceType": "text",
+                    "parentId": 1369,
+                    "children": [],
+                    "visibility": "visible",
+                    "siblingOrder": 11,
+                    "renderMode": "text",
+                    "clipping": false,
+                    "mask": {
+                      "userMask": false,
+                      "vectorMask": false,
+                      "userMaskEnabled": null,
+                      "vectorMaskEnabled": null
+                    },
+                    "bounds": {
+                      "x": 1754,
+                      "y": 23,
+                      "width": 111,
+                      "height": 14
+                    },
+                    "transform": null,
+                    "class": "leaf"
+                  }
+                ],
+                "visibility": "visible",
+                "siblingOrder": 1,
+                "renderMode": "structural-group",
+                "clipping": null,
+                "mask": {
+                  "userMask": false,
+                  "vectorMask": false,
+                  "userMaskEnabled": null,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 61,
+                  "y": 23,
+                  "width": 1810,
+                  "height": 220
+                },
+                "transform": null,
+                "class": "structural-group"
+              }
+            ],
+            "visibility": "visible",
+            "siblingOrder": 2,
+            "renderMode": "structural-group",
+            "clipping": null,
+            "mask": {
+              "userMask": false,
+              "vectorMask": false,
+              "userMaskEnabled": null,
+              "vectorMaskEnabled": null
+            },
+            "bounds": {
+              "x": 61,
+              "y": 22,
+              "width": 1810,
+              "height": 222
+            },
+            "transform": null,
+            "class": "structural-group"
+          },
+          {
+            "id": 1375,
+            "sourceLayerId": 1375,
+            "sourcePath": "灰色能力层-首屏",
+            "sourceType": "group",
+            "parentId": 1377,
+            "children": [
+              {
+                "id": 52,
+                "sourceLayerId": 52,
+                "sourcePath": "Brand Design / Marketing Design / Experience Design",
+                "sourceType": "text",
+                "parentId": 1375,
+                "children": [],
+                "visibility": "visible",
+                "siblingOrder": 0,
+                "renderMode": "text",
+                "clipping": false,
+                "mask": {
+                  "userMask": false,
+                  "vectorMask": false,
+                  "userMaskEnabled": null,
+                  "vectorMaskEnabled": null
+                },
+                "bounds": {
+                  "x": 754,
+                  "y": 1084,
+                  "width": 389,
+                  "height": 16
+                },
+                "transform": null,
+                "class": "leaf"
+              },
+              {
+                "id": 51,
+                "sourceLayerId": 51,
+                "sourcePath": "矩形 5 拷贝",
+                "sourceType": "shape-solid-fill",
+                "parentId": 1375,
+                "children": [],
+                "visibility": "visible",
+                "siblingOrder": 1,
+                "renderMode": "shape",
+                "clipping": false,
+                "mask": {
+                  "userMask": true,
+                  "vectorMask": true,
+                  "userMaskEnabled": true,
+                  "vectorMaskEnabled": true
+                },
+                "bounds": {
+                  "x": -35,
+                  "y": 1042,
+                  "width": 1955,
+                  "height": 94
+                },
+                "transform": null,
+                "class": "leaf"
+              }
+            ],
+            "visibility": "visible",
+            "siblingOrder": 3,
+            "renderMode": "structural-group",
+            "clipping": null,
+            "mask": {
+              "userMask": false,
+              "vectorMask": false,
+              "userMaskEnabled": null,
+              "vectorMaskEnabled": null
+            },
+            "bounds": {
+              "x": -35,
+              "y": 1042,
+              "width": 1955,
+              "height": 94
+            },
+            "transform": null,
+            "class": "structural-group"
+          }
+        ],
+        "visibility": "visible",
+        "siblingOrder": 0,
+        "renderMode": "structural-group",
+        "clipping": null,
+        "mask": {
+          "userMask": false,
+          "vectorMask": false,
+          "userMaskEnabled": null,
+          "vectorMaskEnabled": null
+        },
+        "bounds": {
+          "x": -35,
+          "y": 22,
+          "width": 1955,
+          "height": 1213
+        },
+        "transform": null,
+        "class": "structural-group"
+      }
+    ]
+  },
+  "renderNodes": [
+    {
+      "sourceLayerId": 1377,
+      "sourcePath": "首屏",
+      "sourceType": "group",
+      "parentId": null,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": -35,
+        "y": 22,
+        "width": 1955,
+        "height": 1213,
+        "right": 1920,
+        "bottom": 1235
+      },
+      "geometrySource": {
+        "leftPx": -35.0,
+        "topPx": 22.0,
+        "widthPx": 1955.0,
+        "heightPx": 1213.0,
+        "position": "absolute",
+        "zIndex": 1
+      },
+      "groupContext": {
+        "parentId": null,
+        "siblingOrder": null
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 48,
+      "sourcePath": "装饰圆圈",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1377,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 91,
+        "y": 269,
+        "width": 1738,
+        "height": 774,
+        "right": 1829,
+        "bottom": 1043
+      },
+      "geometrySource": {
+        "leftPx": 91.0,
+        "topPx": 269.0,
+        "widthPx": 1738.0,
+        "heightPx": 774.0,
+        "position": "absolute",
+        "zIndex": 2
+      },
+      "groupContext": {
+        "parentId": 1377,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1373,
+      "sourcePath": "方框",
+      "sourceType": "group",
+      "parentId": 1377,
+      "renderMode": "structural-group",
+      "compilerClass": "paint-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 0,
+        "y": 184,
+        "width": 1920,
+        "height": 861,
+        "right": 1920,
+        "bottom": 1045
+      },
+      "geometrySource": {
+        "leftPx": 0.0,
+        "topPx": 184.0,
+        "widthPx": 1920.0,
+        "heightPx": 861.0,
+        "position": "absolute",
+        "zIndex": 3
+      },
+      "groupContext": {
+        "parentId": 1377,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 56,
+      "sourcePath": "设 拷贝 2",
+      "sourceType": "text",
+      "parentId": 1373,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 486,
+        "y": 184,
+        "width": 967,
+        "height": 759,
+        "right": 1453,
+        "bottom": 943
+      },
+      "geometrySource": {
+        "leftPx": 486.0,
+        "topPx": 184.0,
+        "widthPx": 967.0,
+        "heightPx": 759.0,
+        "position": "absolute",
+        "zIndex": 4
+      },
+      "groupContext": {
+        "parentId": 1373,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 21,
+      "sourcePath": "Brand Upgrade Case",
+      "sourceType": "text",
+      "parentId": 1373,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 45,
+        "y": 947,
+        "width": 1409,
+        "height": 98,
+        "right": 1454,
+        "bottom": 1045
+      },
+      "geometrySource": {
+        "leftPx": 45.0,
+        "topPx": 947.0,
+        "widthPx": 1409.0,
+        "heightPx": 98.0,
+        "position": "absolute",
+        "zIndex": 5
+      },
+      "groupContext": {
+        "parentId": 1373,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "mask": {
+        "hasUserMask": true,
+        "hasVectorMask": false,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 18,
+      "sourcePath": "Brand Marketing Case",
+      "sourceType": "text",
+      "parentId": 1373,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 331,
+        "y": 265,
+        "width": 1551,
+        "height": 98,
+        "right": 1882,
+        "bottom": 363
+      },
+      "geometrySource": {
+        "leftPx": 331.0,
+        "topPx": 265.0,
+        "widthPx": 1551.0,
+        "heightPx": 98.0,
+        "position": "absolute",
+        "zIndex": 6
+      },
+      "groupContext": {
+        "parentId": 1373,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": true,
+        "clippedToLayerId": 19,
+        "clippedToPath": "首屏 / 方框 / 组 1"
+      },
+      "mask": {
+        "hasUserMask": true,
+        "hasVectorMask": false,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 19,
+      "sourcePath": "组 1",
+      "sourceType": "group",
+      "parentId": 1373,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 0,
+        "y": 267,
+        "width": 1920,
+        "height": 777,
+        "right": 1920,
+        "bottom": 1044
+      },
+      "geometrySource": {
+        "leftPx": 0.0,
+        "topPx": 267.0,
+        "widthPx": 1920.0,
+        "heightPx": 777.0,
+        "position": "absolute",
+        "zIndex": 7
+      },
+      "groupContext": {
+        "parentId": 1373,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 17,
+      "sourcePath": "矩形 2 拷贝 2",
+      "sourceType": "shape-solid-fill",
+      "parentId": 19,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 0,
+        "y": 267,
+        "width": 516,
+        "height": 777,
+        "right": 516,
+        "bottom": 1044
+      },
+      "geometrySource": {
+        "leftPx": 0.0,
+        "topPx": 267.0,
+        "widthPx": 516.0,
+        "heightPx": 777.0,
+        "position": "absolute",
+        "zIndex": 8
+      },
+      "groupContext": {
+        "parentId": 19,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 16,
+      "sourcePath": "矩形 2 拷贝",
+      "sourceType": "shape-solid-fill",
+      "parentId": 19,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1404,
+        "y": 267,
+        "width": 516,
+        "height": 777,
+        "right": 1920,
+        "bottom": 1044
+      },
+      "geometrySource": {
+        "leftPx": 1404.0,
+        "topPx": 267.0,
+        "widthPx": 516.0,
+        "heightPx": 777.0,
+        "position": "absolute",
+        "zIndex": 9
+      },
+      "groupContext": {
+        "parentId": 19,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 15,
+      "sourcePath": "矩形 2",
+      "sourceType": "shape-solid-fill",
+      "parentId": 19,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 552,
+        "y": 267,
+        "width": 817,
+        "height": 777,
+        "right": 1369,
+        "bottom": 1044
+      },
+      "geometrySource": {
+        "leftPx": 552.0,
+        "topPx": 267.0,
+        "widthPx": 817.0,
+        "heightPx": 777.0,
+        "position": "absolute",
+        "zIndex": 10
+      },
+      "groupContext": {
+        "parentId": 19,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1371,
+      "sourcePath": "头图信息层",
+      "sourceType": "group",
+      "parentId": 1377,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 61,
+        "y": 22,
+        "width": 1810,
+        "height": 222,
+        "right": 1871,
+        "bottom": 244
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 22.0,
+        "widthPx": 1810.0,
+        "heightPx": 222.0,
+        "position": "absolute",
+        "zIndex": 11
+      },
+      "groupContext": {
+        "parentId": 1377,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1365,
+      "sourcePath": "标题",
+      "sourceType": "group",
+      "parentId": 1371,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 708,
+        "y": 22,
+        "width": 526,
+        "height": 222,
+        "right": 1234,
+        "bottom": 244
+      },
+      "geometrySource": {
+        "leftPx": 708.0,
+        "topPx": 22.0,
+        "widthPx": 526.0,
+        "heightPx": 222.0,
+        "position": "absolute",
+        "zIndex": 12
+      },
+      "groupContext": {
+        "parentId": 1371,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 14,
+      "sourcePath": "矩形 1",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1365,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 834,
+        "y": 231,
+        "width": 63,
+        "height": 1,
+        "right": 897,
+        "bottom": 232
+      },
+      "geometrySource": {
+        "leftPx": 834.0,
+        "topPx": 231.0,
+        "widthPx": 63.0,
+        "heightPx": 1.0,
+        "position": "absolute",
+        "zIndex": 13
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 11,
+      "sourcePath": "2017               2026",
+      "sourceType": "text",
+      "parentId": 1365,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 763,
+        "y": 221,
+        "width": 206,
+        "height": 22,
+        "right": 969,
+        "bottom": 243
+      },
+      "geometrySource": {
+        "leftPx": 763.0,
+        "topPx": 221.0,
+        "widthPx": 206.0,
+        "heightPx": 22.0,
+        "position": "absolute",
+        "zIndex": 14
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 12,
+      "sourcePath": "杭州·深圳·上海",
+      "sourceType": "text",
+      "parentId": 1365,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 999,
+        "y": 220,
+        "width": 166,
+        "height": 24,
+        "right": 1165,
+        "bottom": 244
+      },
+      "geometrySource": {
+        "leftPx": 999.0,
+        "topPx": 220.0,
+        "widthPx": 166.0,
+        "heightPx": 24.0,
+        "position": "absolute",
+        "zIndex": 15
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 9,
+      "sourcePath": "· Annual Collection of Brand Marketing Works ·",
+      "sourceType": "text",
+      "parentId": 1365,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 754,
+        "y": 190,
+        "width": 420,
+        "height": 17,
+        "right": 1174,
+        "bottom": 207
+      },
+      "geometrySource": {
+        "leftPx": 754.0,
+        "topPx": 190.0,
+        "widthPx": 420.0,
+        "heightPx": 17.0,
+        "position": "absolute",
+        "zIndex": 16
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 8,
+      "sourcePath": "作品精選集錄",
+      "sourceType": "text",
+      "parentId": 1365,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 708,
+        "y": 88,
+        "width": 526,
+        "height": 84,
+        "right": 1234,
+        "bottom": 172
+      },
+      "geometrySource": {
+        "leftPx": 708.0,
+        "topPx": 88.0,
+        "widthPx": 526.0,
+        "heightPx": 84.0,
+        "position": "absolute",
+        "zIndex": 17
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 4
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 7,
+      "sourcePath": "品牌營銷體驗",
+      "sourceType": "text",
+      "parentId": 1365,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 809,
+        "y": 22,
+        "width": 326,
+        "height": 53,
+        "right": 1135,
+        "bottom": 75
+      },
+      "geometrySource": {
+        "leftPx": 809.0,
+        "topPx": 22.0,
+        "widthPx": 326.0,
+        "heightPx": 53.0,
+        "position": "absolute",
+        "zIndex": 18
+      },
+      "groupContext": {
+        "parentId": 1365,
+        "siblingOrder": 5
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1369,
+      "sourcePath": "头部文案",
+      "sourceType": "group",
+      "parentId": 1371,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 61,
+        "y": 23,
+        "width": 1810,
+        "height": 220,
+        "right": 1871,
+        "bottom": 243
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 1810.0,
+        "heightPx": 220.0,
+        "position": "absolute",
+        "zIndex": 19
+      },
+      "groupContext": {
+        "parentId": 1371,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1367,
+      "sourcePath": "组 9",
+      "sourceType": "group",
+      "parentId": 1369,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 61,
+        "y": 23,
+        "width": 403,
+        "height": 219,
+        "right": 464,
+        "bottom": 242
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 403.0,
+        "heightPx": 219.0,
+        "position": "absolute",
+        "zIndex": 20
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 32,
+      "sourcePath": "组 2",
+      "sourceType": "group",
+      "parentId": 1367,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 61,
+        "y": 98,
+        "width": 153,
+        "height": 60,
+        "right": 214,
+        "bottom": 158
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 98.0,
+        "widthPx": 153.0,
+        "heightPx": 60.0,
+        "position": "absolute",
+        "zIndex": 21
+      },
+      "groupContext": {
+        "parentId": 1367,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 29,
+      "sourcePath": "康",
+      "sourceType": "text",
+      "parentId": 32,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 158,
+        "y": 101,
+        "width": 53,
+        "height": 53,
+        "right": 211,
+        "bottom": 154
+      },
+      "geometrySource": {
+        "leftPx": 158.0,
+        "topPx": 101.0,
+        "widthPx": 53.0,
+        "heightPx": 53.0,
+        "position": "absolute",
+        "zIndex": 22
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 28,
+      "sourcePath": "椭圆 1 拷贝",
+      "sourceType": "shape-solid-fill",
+      "parentId": 32,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 154,
+        "y": 98,
+        "width": 60,
+        "height": 60,
+        "right": 214,
+        "bottom": 158
+      },
+      "geometrySource": {
+        "leftPx": 154.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "position": "absolute",
+        "zIndex": 23
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 31,
+      "sourcePath": "帅",
+      "sourceType": "text",
+      "parentId": 32,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 113,
+        "y": 101,
+        "width": 50,
+        "height": 53,
+        "right": 163,
+        "bottom": 154
+      },
+      "geometrySource": {
+        "leftPx": 113.0,
+        "topPx": 101.0,
+        "widthPx": 50.0,
+        "heightPx": 53.0,
+        "position": "absolute",
+        "zIndex": 24
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 30,
+      "sourcePath": "椭圆 1 拷贝 2",
+      "sourceType": "shape-solid-fill",
+      "parentId": 32,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 107,
+        "y": 98,
+        "width": 60,
+        "height": 60,
+        "right": 167,
+        "bottom": 158
+      },
+      "geometrySource": {
+        "leftPx": 107.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "position": "absolute",
+        "zIndex": 25
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 25,
+      "sourcePath": "李",
+      "sourceType": "text",
+      "parentId": 32,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 66,
+        "y": 102,
+        "width": 53,
+        "height": 53,
+        "right": 119,
+        "bottom": 155
+      },
+      "geometrySource": {
+        "leftPx": 66.0,
+        "topPx": 102.0,
+        "widthPx": 53.0,
+        "heightPx": 53.0,
+        "position": "absolute",
+        "zIndex": 26
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 4
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 24,
+      "sourcePath": "椭圆 1",
+      "sourceType": "shape-solid-fill",
+      "parentId": 32,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 61,
+        "y": 98,
+        "width": 60,
+        "height": 60,
+        "right": 121,
+        "bottom": 158
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 98.0,
+        "widthPx": 60.0,
+        "heightPx": 60.0,
+        "position": "absolute",
+        "zIndex": 27
+      },
+      "groupContext": {
+        "parentId": 32,
+        "siblingOrder": 5
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 58,
+      "sourcePath": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门",
+      "sourceType": "text",
+      "parentId": 1367,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 61,
+        "y": 184,
+        "width": 403,
+        "height": 58,
+        "right": 464,
+        "bottom": 242
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 184.0,
+        "widthPx": 403.0,
+        "heightPx": 58.0,
+        "position": "absolute",
+        "zIndex": 28
+      },
+      "groupContext": {
+        "parentId": 1367,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 23,
+      "sourcePath": "2026.01 web ",
+      "sourceType": "text",
+      "parentId": 1367,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 61,
+        "y": 46,
+        "width": 97,
+        "height": 12,
+        "right": 158,
+        "bottom": 58
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 46.0,
+        "widthPx": 97.0,
+        "heightPx": 12.0,
+        "position": "absolute",
+        "zIndex": 29
+      },
+      "groupContext": {
+        "parentId": 1367,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 22,
+      "sourcePath": "Personal Design Portfolio · Li Shuaikang",
+      "sourceType": "text",
+      "parentId": 1367,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 61,
+        "y": 23,
+        "width": 359,
+        "height": 17,
+        "right": 420,
+        "bottom": 40
+      },
+      "geometrySource": {
+        "leftPx": 61.0,
+        "topPx": 23.0,
+        "widthPx": 359.0,
+        "heightPx": 17.0,
+        "position": "absolute",
+        "zIndex": 30
+      },
+      "groupContext": {
+        "parentId": 1367,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 43,
+      "sourcePath": "春晚义乌分会场视觉",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1540,
+        "y": 215,
+        "width": 161,
+        "height": 17,
+        "right": 1701,
+        "bottom": 232
+      },
+      "geometrySource": {
+        "leftPx": 1540.0,
+        "topPx": 215.0,
+        "widthPx": 161.0,
+        "heightPx": 17.0,
+        "position": "absolute",
+        "zIndex": 31
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 42,
+      "sourcePath": "矩形 3 拷贝 4",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1369,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1520,
+        "y": 205,
+        "width": 199,
+        "height": 38,
+        "right": 1719,
+        "bottom": 243
+      },
+      "geometrySource": {
+        "leftPx": 1520.0,
+        "topPx": 205.0,
+        "widthPx": 199.0,
+        "heightPx": 38.0,
+        "position": "absolute",
+        "zIndex": 32
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 2
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 41,
+      "sourcePath": "品牌营销KV",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1752,
+        "y": 215,
+        "width": 94,
+        "height": 18,
+        "right": 1846,
+        "bottom": 233
+      },
+      "geometrySource": {
+        "leftPx": 1752.0,
+        "topPx": 215.0,
+        "widthPx": 94.0,
+        "heightPx": 18.0,
+        "position": "absolute",
+        "zIndex": 33
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 40,
+      "sourcePath": "矩形 3 拷贝 3",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1369,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1730,
+        "y": 205,
+        "width": 141,
+        "height": 38,
+        "right": 1871,
+        "bottom": 243
+      },
+      "geometrySource": {
+        "leftPx": 1730.0,
+        "topPx": 205.0,
+        "widthPx": 141.0,
+        "heightPx": 38.0,
+        "position": "absolute",
+        "zIndex": 34
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 4
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 39,
+      "sourcePath": "朱炳仁銅品牌升級案例",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1672,
+        "y": 171,
+        "width": 179,
+        "height": 18,
+        "right": 1851,
+        "bottom": 189
+      },
+      "geometrySource": {
+        "leftPx": 1672.0,
+        "topPx": 171.0,
+        "widthPx": 179.0,
+        "heightPx": 18.0,
+        "position": "absolute",
+        "zIndex": 35
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 5
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 38,
+      "sourcePath": "矩形 3 拷贝 2",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1369,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1652,
+        "y": 161,
+        "width": 219,
+        "height": 38,
+        "right": 1871,
+        "bottom": 199
+      },
+      "geometrySource": {
+        "leftPx": 1652.0,
+        "topPx": 161.0,
+        "widthPx": 219.0,
+        "heightPx": 38.0,
+        "position": "absolute",
+        "zIndex": 36
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 6
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 37,
+      "sourcePath": "大型春秋拍賣會",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1494,
+        "y": 171,
+        "width": 126,
+        "height": 17,
+        "right": 1620,
+        "bottom": 188
+      },
+      "geometrySource": {
+        "leftPx": 1494.0,
+        "topPx": 171.0,
+        "widthPx": 126.0,
+        "heightPx": 17.0,
+        "position": "absolute",
+        "zIndex": 37
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 7
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 35,
+      "sourcePath": "矩形 3",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1369,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1474,
+        "y": 161,
+        "width": 167,
+        "height": 38,
+        "right": 1641,
+        "bottom": 199
+      },
+      "geometrySource": {
+        "leftPx": 1474.0,
+        "topPx": 161.0,
+        "widthPx": 167.0,
+        "heightPx": 38.0,
+        "position": "absolute",
+        "zIndex": 38
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 8
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 47,
+      "sourcePath": "矩形 4",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1369,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": 1803,
+        "y": 134,
+        "width": 11,
+        "height": 11,
+        "right": 1814,
+        "bottom": 145
+      },
+      "geometrySource": {
+        "leftPx": 1803.0,
+        "topPx": 134.0,
+        "widthPx": 11.0,
+        "heightPx": 11.0,
+        "position": "absolute",
+        "zIndex": 39
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 9
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": true,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 46,
+      "sourcePath": "menu",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1817,
+        "y": 135,
+        "width": 45,
+        "height": 10,
+        "right": 1862,
+        "bottom": 145
+      },
+      "geometrySource": {
+        "leftPx": 1817.0,
+        "topPx": 135.0,
+        "widthPx": 45.0,
+        "heightPx": 10.0,
+        "position": "absolute",
+        "zIndex": 40
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 10
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 34,
+      "sourcePath": ".Designer",
+      "sourceType": "text",
+      "parentId": 1369,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 1754,
+        "y": 23,
+        "width": 111,
+        "height": 14,
+        "right": 1865,
+        "bottom": 37
+      },
+      "geometrySource": {
+        "leftPx": 1754.0,
+        "topPx": 23.0,
+        "widthPx": 111.0,
+        "heightPx": 14.0,
+        "position": "absolute",
+        "zIndex": 41
+      },
+      "groupContext": {
+        "parentId": 1369,
+        "siblingOrder": 11
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 1375,
+      "sourcePath": "灰色能力层-首屏",
+      "sourceType": "group",
+      "parentId": 1377,
+      "renderMode": "structural-group",
+      "compilerClass": "structural-group",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": -35,
+        "y": 1042,
+        "width": 1955,
+        "height": 94,
+        "right": 1920,
+        "bottom": 1136
+      },
+      "geometrySource": {
+        "leftPx": -35.0,
+        "topPx": 1042.0,
+        "widthPx": 1955.0,
+        "heightPx": 94.0,
+        "position": "absolute",
+        "zIndex": 42
+      },
+      "groupContext": {
+        "parentId": 1377,
+        "siblingOrder": 3
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": null,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 52,
+      "sourcePath": "Brand Design / Marketing Design / Experience Design",
+      "sourceType": "text",
+      "parentId": 1375,
+      "renderMode": "text",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "text-anchor",
+      "bounds": {
+        "x": 754,
+        "y": 1084,
+        "width": 389,
+        "height": 16,
+        "right": 1143,
+        "bottom": 1100
+      },
+      "geometrySource": {
+        "leftPx": 754.0,
+        "topPx": 1084.0,
+        "widthPx": 389.0,
+        "heightPx": 16.0,
+        "position": "absolute",
+        "zIndex": 43
+      },
+      "groupContext": {
+        "parentId": 1375,
+        "siblingOrder": 0
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": false,
+        "hasVectorMask": false,
+        "userMaskEnabled": null,
+        "userMaskLinked": null,
+        "vectorMaskEnabled": null,
+        "vectorMaskLinked": null,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    },
+    {
+      "sourceLayerId": 51,
+      "sourcePath": "矩形 5 拷贝",
+      "sourceType": "shape-solid-fill",
+      "parentId": 1375,
+      "renderMode": "shape",
+      "compilerClass": "leaf-paint",
+      "paintOrder": null,
+      "renderStrategy": "absolute-div",
+      "bounds": {
+        "x": -35,
+        "y": 1042,
+        "width": 1955,
+        "height": 94,
+        "right": 1920,
+        "bottom": 1136
+      },
+      "geometrySource": {
+        "leftPx": -35.0,
+        "topPx": 1042.0,
+        "widthPx": 1955.0,
+        "heightPx": 94.0,
+        "position": "absolute",
+        "zIndex": 44
+      },
+      "groupContext": {
+        "parentId": 1375,
+        "siblingOrder": 1
+      },
+      "visibility": "visible",
+      "clipping": {
+        "isClippingLayer": false,
+        "clippedToLayerId": null,
+        "clippedToPath": null
+      },
+      "mask": {
+        "hasUserMask": true,
+        "hasVectorMask": true,
+        "userMaskEnabled": true,
+        "userMaskLinked": true,
+        "vectorMaskEnabled": true,
+        "vectorMaskLinked": true,
+        "vectorMaskDensity": 255,
+        "vectorMaskFeather": null,
+        "userMaskDensity": 255,
+        "userMaskFeather": null
+      }
+    }
+  ],
+  "stackingContexts": [
+    {
+      "sourceLayerId": 1373,
+      "sourcePath": "方框",
+      "parentId": 1377,
+      "contextType": "paint-group",
+      "paintOrder": 1,
+      "renderStrategy": "stacking-context"
+    }
+  ],
+  "clipGroups": [
+    {
+      "sourceLayerId": 56,
+      "sourcePath": "设 拷贝 2",
+      "clippingBase": 19,
+      "basePath": "组 1",
+      "clippedToPath": "首屏 / 方框 / 组 1",
+      "renderStrategy": "clip-group"
+    },
+    {
+      "sourceLayerId": 21,
+      "sourcePath": "Brand Upgrade Case",
+      "clippingBase": 19,
+      "basePath": "组 1",
+      "clippedToPath": "首屏 / 方框 / 组 1",
+      "renderStrategy": "clip-group"
+    },
+    {
+      "sourceLayerId": 18,
+      "sourcePath": "Brand Marketing Case",
+      "clippingBase": 19,
+      "basePath": "组 1",
+      "clippedToPath": "首屏 / 方框 / 组 1",
+      "renderStrategy": "clip-group"
+    }
+  ],
+  "maskInstructions": [
+    {
+      "sourceLayerId": 48,
+      "sourcePath": "装饰圆圈",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 21,
+      "sourcePath": "Brand Upgrade Case",
+      "maskType": "user-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 18,
+      "sourcePath": "Brand Marketing Case",
+      "maskType": "user-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 17,
+      "sourcePath": "矩形 2 拷贝 2",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 16,
+      "sourcePath": "矩形 2 拷贝",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 15,
+      "sourcePath": "矩形 2",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 14,
+      "sourcePath": "矩形 1",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 28,
+      "sourcePath": "椭圆 1 拷贝",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 30,
+      "sourcePath": "椭圆 1 拷贝 2",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 24,
+      "sourcePath": "椭圆 1",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 42,
+      "sourcePath": "矩形 3 拷贝 4",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 40,
+      "sourcePath": "矩形 3 拷贝 3",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 38,
+      "sourcePath": "矩形 3 拷贝 2",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 35,
+      "sourcePath": "矩形 3",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 47,
+      "sourcePath": "矩形 4",
+      "maskType": "vector-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    },
+    {
+      "sourceLayerId": 51,
+      "sourcePath": "矩形 5 拷贝",
+      "maskType": "user-mask",
+      "enabled": true,
+      "linked": true,
+      "renderStrategy": "clip-mask"
+    }
+  ],
+  "textInstructions": [
+    {
+      "sourceLayerId": 56,
+      "sourcePath": "设 拷贝 2",
+      "anchor": {
+        "leftPx": 486.0,
+        "topPx": 184.0
+      },
+      "sourceFontSize": 1112.779,
+      "fontPostScriptName": "WuHanYingXiongTi-Regular",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 486,
+        "y": 184,
+        "width": 967,
+        "height": 759,
+        "right": 1453,
+        "bottom": 943
+      },
+      "text": "设"
+    },
+    {
+      "sourceLayerId": 21,
+      "sourcePath": "Brand Upgrade Case",
+      "anchor": {
+        "leftPx": 45.0,
+        "topPx": 947.0
+      },
+      "sourceFontSize": 150.0,
+      "fontPostScriptName": "Blinker-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 45,
+        "y": 947,
+        "width": 1409,
+        "height": 98,
+        "right": 1454,
+        "bottom": 1045
+      },
+      "text": "Brand Upgrade Case"
+    },
+    {
+      "sourceLayerId": 18,
+      "sourcePath": "Brand Marketing Case",
+      "anchor": {
+        "leftPx": 331.0,
+        "topPx": 265.0
+      },
+      "sourceFontSize": 150.0,
+      "fontPostScriptName": "Blinker-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 331,
+        "y": 265,
+        "width": 1551,
+        "height": 98,
+        "right": 1882,
+        "bottom": 363
+      },
+      "text": "Brand Marketing Case"
+    },
+    {
+      "sourceLayerId": 11,
+      "sourcePath": "2017               2026",
+      "anchor": {
+        "leftPx": 763.0,
+        "topPx": 221.0
+      },
+      "sourceFontSize": 30.625,
+      "fontPostScriptName": "BodoniSvtyTwoITCTT-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 763,
+        "y": 221,
+        "width": 206,
+        "height": 22,
+        "right": 969,
+        "bottom": 243
+      },
+      "text": "2017               2026"
+    },
+    {
+      "sourceLayerId": 12,
+      "sourcePath": "杭州·深圳·上海",
+      "anchor": {
+        "leftPx": 999.0,
+        "topPx": 220.0
+      },
+      "sourceFontSize": 24.747,
+      "fontPostScriptName": "SourceHanSerifCN-Heavy",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 999,
+        "y": 220,
+        "width": 166,
+        "height": 24,
+        "right": 1165,
+        "bottom": 244
+      },
+      "text": "杭州·深圳·上海"
+    },
+    {
+      "sourceLayerId": 9,
+      "sourcePath": "· Annual Collection of Brand Marketing Works ·",
+      "anchor": {
+        "leftPx": 754.0,
+        "topPx": 190.0
+      },
+      "sourceFontSize": 19.588,
+      "fontPostScriptName": "Marion-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 754,
+        "y": 190,
+        "width": 420,
+        "height": 17,
+        "right": 1174,
+        "bottom": 207
+      },
+      "text": "· Annual Collection of Brand Marketing Works ·"
+    },
+    {
+      "sourceLayerId": 8,
+      "sourcePath": "作品精選集錄",
+      "anchor": {
+        "leftPx": 708.0,
+        "topPx": 88.0
+      },
+      "sourceFontSize": 88.0,
+      "fontPostScriptName": "SourceHanSerifCN-Heavy",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 708,
+        "y": 88,
+        "width": 526,
+        "height": 84,
+        "right": 1234,
+        "bottom": 172
+      },
+      "text": "作品精選集錄"
+    },
+    {
+      "sourceLayerId": 7,
+      "sourcePath": "品牌營銷體驗",
+      "anchor": {
+        "leftPx": 809.0,
+        "topPx": 22.0
+      },
+      "sourceFontSize": 55.0,
+      "fontPostScriptName": "SourceHanSerifCN-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 809,
+        "y": 22,
+        "width": 326,
+        "height": 53,
+        "right": 1135,
+        "bottom": 75
+      },
+      "text": "品牌營銷體驗"
+    },
+    {
+      "sourceLayerId": 29,
+      "sourcePath": "康",
+      "anchor": {
+        "leftPx": 158.0,
+        "topPx": 101.0
+      },
+      "sourceFontSize": 55.0,
+      "fontPostScriptName": "SourceHanSerifCN-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 158,
+        "y": 101,
+        "width": 53,
+        "height": 53,
+        "right": 211,
+        "bottom": 154
+      },
+      "text": "康"
+    },
+    {
+      "sourceLayerId": 31,
+      "sourcePath": "帅",
+      "anchor": {
+        "leftPx": 113.0,
+        "topPx": 101.0
+      },
+      "sourceFontSize": 55.0,
+      "fontPostScriptName": "SourceHanSerifCN-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 113,
+        "y": 101,
+        "width": 50,
+        "height": 53,
+        "right": 163,
+        "bottom": 154
+      },
+      "text": "帅"
+    },
+    {
+      "sourceLayerId": 25,
+      "sourcePath": "李",
+      "anchor": {
+        "leftPx": 66.0,
+        "topPx": 102.0
+      },
+      "sourceFontSize": 55.0,
+      "fontPostScriptName": "SourceHanSerifCN-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 66,
+        "y": 102,
+        "width": 53,
+        "height": 53,
+        "right": 119,
+        "bottom": 155
+      },
+      "text": "李"
+    },
+    {
+      "sourceLayerId": 58,
+      "sourcePath": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门",
+      "anchor": {
+        "leftPx": 61.0,
+        "topPx": 184.0
+      },
+      "sourceFontSize": 14.0,
+      "fontPostScriptName": "SourceHanSansCN-Regular",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": 22.0,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 61,
+        "y": 184,
+        "width": 403,
+        "height": 58,
+        "right": 464,
+        "bottom": 242
+      },
+      "text": "8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门店等场景，并熟练运用 AIGC 提升创意与执行效率。"
+    },
+    {
+      "sourceLayerId": 23,
+      "sourcePath": "2026.01 web ",
+      "anchor": {
+        "leftPx": 61.0,
+        "topPx": 46.0
+      },
+      "sourceFontSize": 16.0,
+      "fontPostScriptName": "Marion-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 61,
+        "y": 46,
+        "width": 97,
+        "height": 12,
+        "right": 158,
+        "bottom": 58
+      },
+      "text": "2026.01 web\n"
+    },
+    {
+      "sourceLayerId": 22,
+      "sourcePath": "Personal Design Portfolio · Li Shuaikang",
+      "anchor": {
+        "leftPx": 61.0,
+        "topPx": 23.0
+      },
+      "sourceFontSize": 19.588,
+      "fontPostScriptName": "Marion-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 61,
+        "y": 23,
+        "width": 359,
+        "height": 17,
+        "right": 420,
+        "bottom": 40
+      },
+      "text": "Personal Design Portfolio · Li Shuaikang"
+    },
+    {
+      "sourceLayerId": 43,
+      "sourcePath": "春晚义乌分会场视觉",
+      "anchor": {
+        "leftPx": 1540.0,
+        "topPx": 215.0
+      },
+      "sourceFontSize": 18.0,
+      "fontPostScriptName": "SourceHanSansCN-Medium",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1540,
+        "y": 215,
+        "width": 161,
+        "height": 17,
+        "right": 1701,
+        "bottom": 232
+      },
+      "text": "春晚义乌分会场视觉"
+    },
+    {
+      "sourceLayerId": 41,
+      "sourcePath": "品牌营销KV",
+      "anchor": {
+        "leftPx": 1752.0,
+        "topPx": 215.0
+      },
+      "sourceFontSize": 18.0,
+      "fontPostScriptName": "SourceHanSansCN-Medium",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1752,
+        "y": 215,
+        "width": 94,
+        "height": 18,
+        "right": 1846,
+        "bottom": 233
+      },
+      "text": "品牌营销KV"
+    },
+    {
+      "sourceLayerId": 39,
+      "sourcePath": "朱炳仁銅品牌升級案例",
+      "anchor": {
+        "leftPx": 1672.0,
+        "topPx": 171.0
+      },
+      "sourceFontSize": 18.0,
+      "fontPostScriptName": "SourceHanSansCN-Medium",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1672,
+        "y": 171,
+        "width": 179,
+        "height": 18,
+        "right": 1851,
+        "bottom": 189
+      },
+      "text": "朱炳仁銅品牌升級案例"
+    },
+    {
+      "sourceLayerId": 37,
+      "sourcePath": "大型春秋拍賣會",
+      "anchor": {
+        "leftPx": 1494.0,
+        "topPx": 171.0
+      },
+      "sourceFontSize": 18.0,
+      "fontPostScriptName": "SourceHanSansCN-Medium",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1494,
+        "y": 171,
+        "width": 126,
+        "height": 17,
+        "right": 1620,
+        "bottom": 188
+      },
+      "text": "大型春秋拍賣會"
+    },
+    {
+      "sourceLayerId": 46,
+      "sourcePath": "menu",
+      "anchor": {
+        "leftPx": 1817.0,
+        "topPx": 135.0
+      },
+      "sourceFontSize": 14.0,
+      "fontPostScriptName": "Marion-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1817,
+        "y": 135,
+        "width": 45,
+        "height": 10,
+        "right": 1862,
+        "bottom": 145
+      },
+      "text": "menu"
+    },
+    {
+      "sourceLayerId": 34,
+      "sourcePath": ".Designer",
+      "anchor": {
+        "leftPx": 1754.0,
+        "topPx": 23.0
+      },
+      "sourceFontSize": 19.588,
+      "fontPostScriptName": "Marion-Bold",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 1754,
+        "y": 23,
+        "width": 111,
+        "height": 14,
+        "right": 1865,
+        "bottom": 37
+      },
+      "text": ".Designer"
+    },
+    {
+      "sourceLayerId": 52,
+      "sourcePath": "Brand Design / Marketing Design / Experience Design",
+      "anchor": {
+        "leftPx": 754.0,
+        "topPx": 1084.0
+      },
+      "sourceFontSize": 18.0,
+      "fontPostScriptName": "Blinker-Regular",
+      "transform": "baked-into-font-size-and-visual-bounds",
+      "leading": null,
+      "tracking": null,
+      "alignment": "left",
+      "orientation": "horizontal",
+      "visualBounds": {
+        "x": 754,
+        "y": 1084,
+        "width": 389,
+        "height": 16,
+        "right": 1143,
+        "bottom": 1100
+      },
+      "text": "Brand Design / Marketing Design / Experience Design"
+    }
+  ],
+  "warnings": [],
+  "validation": {
+    "schema": "ps2web.compiler.v0.2.1",
+    "version": "0.2.1",
+    "status": "pass",
+    "checks": {
+      "hierarchyComplete": true,
+      "parentChildCountConsistent": true,
+      "siblingOrderPreserved": true,
+      "clippingBasesResolved": true,
+      "maskStatesExplicit": true,
+      "blackShapesRetained": true,
+      "textUsesTextTranslation": true,
+      "noUniformBoundsCSSBoxRule": true
+    },
+    "facts": {
+      "totalNormalizedElements": 44,
+      "renderableCount": 35,
+      "blackShapeIds": [
+        17,
+        15,
+        16
+      ],
+      "blackShapeParentIds": {
+        "17": 19,
+        "15": 19,
+        "16": 19
+      },
+      "clipGroupCount": 3,
+      "maskInstructionCount": 16,
+      "textInstructionCount": 21,
+      "warningCount": 0
+    },
+    "warnings": []
+  }
+}

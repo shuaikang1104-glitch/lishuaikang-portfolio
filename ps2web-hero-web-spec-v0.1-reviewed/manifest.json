@@ -1,0 +1,19 @@
+{
+  "schema": "ps2web.export-manifest",
+  "version": "0.1-reviewed",
+  "section": "hero",
+  "status": "review-gate-resolved",
+  "referenceViewport": {
+    "width": 1920,
+    "height": 1136
+  },
+  "sourceDocument": "网站模板-1.psb",
+  "includedElementCount": 44,
+  "excludedElementCount": 16,
+  "files": [
+    "hero.web-spec.reviewed.json",
+    "reference.png",
+    "AGENT-INSTRUCTIONS.md",
+    "REVIEW-RESOLUTION.md"
+  ]
+}

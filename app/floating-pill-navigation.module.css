@@ -1,0 +1,57 @@
+.pill {
+  position: fixed;
+  z-index: 6000;
+  top: 40px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  height: 52px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: #2b2b2b;
+  font-family: var(--font-blinker), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -12px);
+  transition: opacity 310ms ease-out, transform 310ms ease-out, visibility 310ms;
+}
+
+.pill[data-visible='true'] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.pill a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pill a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  .pill {
+    height: 52px;
+    padding: 0 32px;
+    gap: 18px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill { transition: none; }
+}

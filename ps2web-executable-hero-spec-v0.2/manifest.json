@@ -1,0 +1,14 @@
+{
+  "name": "PS2Web Executable Hero Spec",
+  "version": "0.2",
+  "sourceSchema": "ps2web.web-spec",
+  "elementCount": 44,
+  "leafCount": 35,
+  "viewport": "1920x1136",
+  "files": [
+    "hero.executable-spec.json",
+    "reference.png",
+    "AGENT-INSTRUCTIONS.md",
+    "README.md"
+  ]
+}

@@ -557,63 +557,96 @@ export function HomePage() {
         aria-hidden
       />
 
-      <section
-        id="hero"
-        className="relative z-10 flex min-h-[100dvh] flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-20 md:pt-28 lg:px-16"
-      >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_68%_46%_at_50%_108%,rgba(0,0,0,0.78),transparent_62%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_62%_at_50%_-10%,rgba(95,100,130,0.18),transparent_58%)]" />
-
+      <section id="hero" className="relative z-10 w-full overflow-hidden bg-[#f3f0e8]">
         <motion.div
-          className="relative max-w-[min(98vw,1320px)]"
+          className="relative mx-auto h-[1213px] w-[1920px] overflow-hidden border border-[#d7d0c4] bg-[#f3f0e8] text-slate-900"
           style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
         >
           <motion.div
-            className="pointer-events-none absolute -left-[8%] top-[16%] h-[42%] w-[55%] rounded-full bg-[radial-gradient(circle,rgba(130,138,175,0.14),transparent_68%)] blur-3xl"
+            className="pointer-events-none absolute left-[126px] top-[247px] h-[774px] w-[1738px] rounded-full border border-[#d7d0c4] bg-[#f8f6f3]"
             style={{ opacity: heroBloom }}
           />
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={{
-              hidden: {},
-              show: {
-                transition: { staggerChildren: 0.1, delayChildren: 0.08 },
-              },
-            }}
-          >
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 24 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.85, ease: sectionEase }}
-              className="mb-9 max-w-md font-sans text-[11px] font-normal uppercase tracking-[0.24em] text-zinc-500"
-            >
-              Visual designer · system / operation / materials
-            </motion.p>
-            <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 36 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 1.05, ease: sectionEase }}
-              className="relative max-w-[95vw] font-serif-cn text-[clamp(4.2rem,17vw,12.5rem)] font-black leading-[0.86] tracking-[-0.045em] text-zinc-50 [text-shadow:0_0_80px_rgba(0,0,0,0.55)]"
-            >
-              李帅康
-            </motion.h1>
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 28 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.95, ease: sectionEase }}
-              className="mt-6 max-w-2xl font-serif-cn text-[clamp(1.25rem,3vw,2.2rem)] font-light leading-snug tracking-[0.02em] text-zinc-400"
-            >
-              以运营设计、品牌视觉系统与宣传物料设计，建立东方语境下的商业视觉秩序。
-            </motion.p>
-            <HeroCapabilityMap />
-          </motion.div>
+
+          <div className="pointer-events-none absolute left-[35px] top-[162px] h-[861px] w-[1920px] border border-[#d7d0c4] bg-transparent" />
+          <div className="pointer-events-none absolute left-[0px] top-[267px] h-[777px] w-[516px] bg-[#ebedf0]" />
+          <div className="pointer-events-none absolute left-[552px] top-[267px] h-[777px] w-[817px] bg-[#cdd1d8]" />
+          <div className="pointer-events-none absolute left-[1404px] top-[267px] h-[777px] w-[516px] bg-[#dfe5eb]" />
+
+          <div className="pointer-events-none absolute left-[96px] top-[0px] h-[222px] w-[1810px]">
+            <div className="flex items-center justify-between px-[0px] pt-[0px] text-[11px] uppercase tracking-[0.18em] text-slate-700">
+              <span>Personal Design Portfolio · Li Shuaikang</span>
+              <span>.Designer</span>
+            </div>
+
+            <div className="mt-[10px] flex items-start justify-between">
+              <div className="w-[403px] pt-[44px]">
+                <div className="flex items-center gap-[6px]">
+                  <span className="inline-flex h-[60px] w-[60px] items-center justify-center border border-slate-900 text-[18px] font-medium text-slate-900">
+                    李
+                  </span>
+                  <span className="inline-flex h-[60px] w-[60px] items-center justify-center rounded-full border border-slate-900 text-[18px] font-medium text-slate-900">
+                    帅
+                  </span>
+                  <span className="inline-flex h-[60px] w-[60px] items-center justify-center rounded-full border border-slate-900 text-[18px] font-medium text-slate-900">
+                    康
+                  </span>
+                </div>
+
+                <p className="mt-[40px] max-w-[403px] text-[14px] leading-[1.9] text-slate-700">
+                  8 年品牌视觉与 Campaign 设计经验，具备大型营销活动/品牌展陈及品牌升级项目经验，能够统筹主视觉/传播物料/展陈及门店等场景，并熟练运用 AIGC 提升创意与执行效率。
+                </p>
+
+                <div className="mt-[28px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.14em] text-slate-700">
+                  <span>2026.01 web</span>
+                  <span className="text-slate-400">·</span>
+                  <span>Brand Design</span>
+                </div>
+              </div>
+
+              <div className="w-[526px] pt-[0px] text-slate-900">
+                <div className="mt-[0px] flex items-center justify-between text-[20px] leading-none">
+                  <span className="font-serif-cn tracking-[-0.04em]">品牌營銷體驗</span>
+                  <span className="font-serif-cn tracking-[-0.04em]">作品精選集錄</span>
+                </div>
+
+                <div className="mt-[18px] flex items-center justify-between text-[20px] font-medium tracking-[-0.02em]">
+                  <span className="font-serif-cn">杭州·深圳·上海</span>
+                </div>
+
+                <div className="mt-[10px] flex items-center justify-center text-[12px] uppercase tracking-[0.18em] text-slate-700">
+                  · Annual Collection of Brand Marketing Works ·
+                </div>
+
+                <div className="mt-[16px] flex items-center justify-between text-[12px] uppercase tracking-[0.18em] text-slate-700">
+                  <span>2017</span>
+                  <span className="flex-1 border-t border-slate-400" />
+                  <span>2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pointer-events-none absolute left-[0px] top-[1020px] h-[94px] w-[1955px] bg-[#dfe3e0]" />
+          <div className="pointer-events-none absolute left-[754px] top-[1084px] text-[18px] uppercase tracking-[0.18em] text-slate-700">
+            Brand Design / Marketing Design / Experience Design
+          </div>
+
+          <div className="pointer-events-none absolute left-[96px] top-[1171px] h-[42px] w-[1796px]">
+            <div className="flex items-center justify-between text-[16px] text-slate-700">
+              <span>01</span>
+              <span>02</span>
+              <span>03</span>
+            </div>
+            <div className="mt-[4px] flex items-center justify-between text-[16px] text-slate-700">
+              <span>Brand Design / Marketing Design / Experience Design</span>
+              <span>04  Important Project</span>
+            </div>
+            <div className="mt-[6px] flex items-center justify-between text-[11px] text-slate-700">
+              <span>2026.826.WED</span>
+              <span>02  Professional Skills</span>
+              <span>Starting from a core idea, establish a clear and distinctive visual expression.</span>
+            </div>
+          </div>
         </motion.div>
       </section>
 

@@ -1,0 +1,100 @@
+.casePage {
+  --case-blue: #0d63ed;
+  --case-gutter: clamp(24px, 3.125vw, 60px);
+  --case-image-max-width: 1480px;
+  --case-info-gap: 60px;
+  /* Work Experience: 433px card + 24px gap; divider at 444px (11 / 1 / 12). */
+  --image-gap: calc(100vw * 24 / 1920);
+  background: #000;
+  color: #d0d0d0;
+  font-family: var(--font-blinker), Arial, sans-serif;
+  overflow: clip;
+}
+.casePage p, .casePage h1, .casePage h2, .casePage figure, .casePage dl, .casePage dd { margin: 0; }
+.casePage a { color: inherit; text-decoration: none; }
+.casePage a:focus-visible { outline: 1px solid var(--case-blue); outline-offset: 8px; }
+.header { position: relative; padding: 40px var(--case-gutter) 48px; }
+.topNav { height: 1.5em; display: flex; justify-content: space-between; gap: 24px; color: var(--case-blue); font-size: 16px; }
+/* Keep the original text offset; circle and text now share normal horizontal flow. */
+.casePage .backLink { display: inline-flex; gap: calc(48px - 1.5em); align-items: center; align-self: flex-start; cursor: pointer; color: var(--case-blue); transition: color 200ms ease-out; }
+.backArrow { flex: 0 0 auto; display: grid; place-items: center; width: 1.5em; height: 1.5em; box-sizing: border-box; border: 1px solid #12366d; border-radius: 50%; color: var(--case-blue); background: transparent; line-height: 1; transition: background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out; }
+.backArrow svg { display: block; width: 1em; height: 1em; }
+.casePage .backLink:hover { color: #3280f5; }
+.backLink:hover .backArrow { background: var(--case-blue); border-color: var(--case-blue); color: #fff; }
+.casePage .backLink:focus-visible { outline: 2px solid #73a8ff; outline-offset: 10px; border-radius: 2px; }
+.headline { margin-top: clamp(72px, 7vw, 134px); }
+.eyebrow { color: var(--case-blue); font-size: 20px; letter-spacing: 0.04em; }
+.headline h1 { margin-top: 28px; font-family: var(--font-noto-serif-sc), "Songti SC", serif; font-weight: 900; font-size: clamp(40px, 5vw, 96px); line-height: 1.25; letter-spacing: -0.04em; color: #e5e5e5; }
+.projectInfo { position: relative; align-items: start; display: grid; grid-template-columns: 1fr 1fr; gap: var(--case-info-gap); margin-top: 52px; }
+.projectInfo dl { display: flex; gap: clamp(40px, 7vw, 135px); }
+.projectInfo dt { color: var(--case-blue); font-size: 14px; margin-bottom: 12px; }
+.projectInfo dd { font-size: 20px; }
+/* The left information group sets the bottom anchor; the full copy group keeps its natural height. */
+.intro { position: absolute; grid-area: 1 / 2; bottom: 0; right: max(0px, calc(100% + var(--case-info-gap) / 2 - var(--case-image-max-width) / 2)); width: 100%; max-width: 640px; font-family: var(--font-noto-serif-sc), "Songti SC", serif; font-size: 18px; line-height: 1.9; }
+.intro .demoNote { margin-top: 20px; color: #777; font-size: 14px; }
+.marquee { position: relative; overflow: hidden; width: 100%; mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+.marquee::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.48) 28%, transparent 50%, rgba(0,0,0,.48) 72%, rgba(0,0,0,.95)); }
+.marqueeTrack { display: flex; width: max-content; flex-wrap: nowrap; white-space: nowrap; will-change: transform; }
+.marqueeCopy { display: block; flex: 0 0 auto; width: max-content; padding-right: .4em; color: var(--case-blue); }
+.smallMarqueeFrame { position: relative; }
+.smallMarqueeFrame::before, .smallMarqueeFrame::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: min(1480px, calc(100% - var(--case-gutter) * 2));
+  height: 1px;
+  z-index: 1;
+  background: linear-gradient(90deg, transparent 0%, rgba(13,99,237,.52) 28%, var(--case-blue) 50%, rgba(13,99,237,.52) 72%, transparent 100%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.smallMarqueeFrame::before { top: 0; }
+.smallMarqueeFrame::after { bottom: 0; }
+.smallMarquee { padding-block: 8px; }
+.smallMarquee .marqueeCopy { font-size: clamp(18px, 1.25vw, 24px); font-weight: 400; letter-spacing: .025em; line-height: 1.2; }
+.largeMarquee .marqueeCopy { font-size: clamp(72px, 9.375vw, 180px); font-weight: 700; line-height: .86; letter-spacing: -.045em; word-spacing: .08em; }
+.artworks { width: min(var(--case-image-max-width), calc(100% - var(--case-gutter) * 2)); margin: 54px auto 0; }
+.artworkHeading { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 32px; color: #777; font-size: 14px; }
+.artworkHeading h2 { font-size: 14px; font-weight: 400; color: var(--case-blue); }
+.originalImage { display: block; width: 100%; height: auto; object-fit: contain; }
+.placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; width: 100%; background: #0d0d0d; border: 1px solid #202020; color: #777; }
+.placeholder .placeholderNumber { color: var(--case-blue); font-size: clamp(36px, 4vw, 76px); font-weight: 300; }
+.placeholder p { font-family: var(--font-noto-serif-sc), serif; font-size: 18px; }
+.placeholder > span:last-child { font-size: 12px; letter-spacing: .04em; }
+.artwork figcaption { margin-top: 16px; color: #666; font-size: 12px; }
+/* Match the lower gap after subtracting the hidden caption’s unchanged 16px margin + 18px line box. */
+.imageDivider { margin: calc(var(--image-gap) * 12 / 24 - 16px - 18px) 0 calc(var(--image-gap) * 12 / 24); border: 0; height: calc(100vw / 1920); background: rgba(122,122,122,.38); }
+.footer { padding-top: clamp(96px, 8vw, 154px); }
+.footerMeta { position: relative; align-items: start; display: grid; grid-template-columns: 1.89fr 1fr 1.67fr minmax(max-content, 2.11fr); gap: 32px; margin: clamp(72px, 7vw, 134px) var(--case-gutter) 80px; color: var(--case-blue); font-family: Arial, sans-serif; font-size: 14px; line-height: 1.75; }
+/* Preserve the existing row height while content remains in its fourth grid track. */
+.footerIndex { grid-column: 4; max-height: 0; align-items: flex-start; display: flex; justify-content: space-between; gap: 20px; }
+.footerIndex > div { flex: 0 0 auto; }
+.footerIndex b { display: block; font-weight: 400; }
+.footerIndex p { margin-top: 0; white-space: nowrap; }
+.bottomNav { display: flex; justify-content: space-between; align-items: start; gap: 32px; margin-inline: var(--case-gutter); padding: 32px 0 48px; border-top: 1px solid var(--case-blue); color: var(--case-blue); font-size: 16px; }
+.bottomNav > div { flex-shrink: 0; white-space: nowrap; text-align: right; }
+.bottomNav [aria-disabled] { color: #666; }
+.bottomNav small { display: block; margin-top: 8px; font-size: 12px; color: #666; }
+/* Retain the existing narrow-screen composition without horizontal overflow. */
+@media (max-width: 1200px) {
+  .footerMeta { grid-template-columns: 1.1fr .8fr 1fr 1.6fr; }
+  .footerIndex > div { flex: 0 1 auto; }
+  .footerIndex p { white-space: normal; }
+}
+@media (max-width: 760px) {
+  .header { padding-top: 24px; padding-bottom: 29px; }
+  .topNav { font-size: 12px; }
+  .eyebrow { font-size: 16px; }
+  .projectInfo { grid-template-columns: 1fr; gap: 32px; margin-top: 33px; }
+  .intro { position: static; grid-area: auto; width: auto; font-size: 16px; }
+  .artworks { margin-top: 33px; }
+  .artworkHeading { flex-direction: column; gap: 8px; }
+  .footerMeta { grid-template-columns: 1fr 1fr; gap: 28px; font-size: 12px; margin-bottom: 48px; }
+  .footerIndex { max-height: none; grid-column: 1 / -1; padding-bottom: 16px; }
+  .bottomNav { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .marqueeTrack { will-change: auto; } }
+
+/* Independent transparent 3D test area; never occupies the text layout. */
+.floatingPin { position: absolute; width: 180px; height: 180px; visibility: hidden; pointer-events: none; }
+.floatingPin canvas { display: block; width: 180px; height: 180px; pointer-events: none; }
