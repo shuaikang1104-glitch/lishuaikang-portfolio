@@ -45,7 +45,7 @@ export default function FloatingPillNavigation() {
       if (navigating || !delta) return;
       accumulated = accumulated * delta < 0 ? delta : accumulated + delta;
       if (Math.abs(accumulated) >= 18) {
-        setVisible(accumulated > 0);
+        setVisible(accumulated < 0);
         accumulated = 0;
       }
     };
