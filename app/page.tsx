@@ -1051,6 +1051,9 @@ const featuredProjects = [
 
 function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fallbackRef = useRef<HTMLImageElement>(null);
+  const [fallbackSrc, setFallbackSrc] = useState<string | null>(null);
+  const canvasFailedRef = useRef(false);
   const sourceImageRef = useRef<HTMLImageElement | null>(null);
   const sampleCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const pixelSizeRef = useRef(56);
@@ -1062,43 +1065,53 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
     const sourceImage = sourceImageRef.current;
     if (!canvas || !sourceImage?.complete || !sourceImage.naturalWidth) return;
 
-    const context = canvas.getContext('2d');
-    if (!context) return;
-
-    const pixelSize = pixelSizeRef.current;
-    const sampleWidth = Math.max(1, Math.ceil(canvas.width / pixelSize));
-    const sampleHeight = Math.max(1, Math.ceil(canvas.height / pixelSize));
-    const sampleCanvas = sampleCanvasRef.current ?? document.createElement('canvas');
-    sampleCanvasRef.current = sampleCanvas;
-    sampleCanvas.width = sampleWidth;
-    sampleCanvas.height = sampleHeight;
-
-    const sampleContext = sampleCanvas.getContext('2d');
-    if (!sampleContext) return;
-
-    const sourceRatio = sourceImage.naturalWidth / sourceImage.naturalHeight;
-    const targetRatio = sampleWidth / sampleHeight;
-    let drawWidth = sampleWidth;
-    let drawHeight = sampleHeight;
-    let drawX = 0;
-    let drawY = 0;
-
-    if (sourceRatio > targetRatio) {
-      drawHeight = sampleWidth / sourceRatio;
-      drawY = (sampleHeight - drawHeight) / 2;
-    } else {
-      drawWidth = sampleHeight * sourceRatio;
-      drawX = (sampleWidth - drawWidth) / 2;
+    if (canvasFailedRef.current) {
+      if (fallbackRef.current) fallbackRef.current.style.filter = `grayscale(${1 - colorMixRef.current})`;
+      return;
     }
 
-    sampleContext.clearRect(0, 0, sampleWidth, sampleHeight);
-    sampleContext.imageSmoothingEnabled = true;
-    sampleContext.filter = `grayscale(${((1 - colorMixRef.current) * 100).toFixed(2)}%)`;
-    sampleContext.drawImage(sourceImage, drawX, drawY, drawWidth, drawHeight);
+    try {
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Project canvas context unavailable');
 
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.imageSmoothingEnabled = false;
-    context.drawImage(sampleCanvas, 0, 0, canvas.width, canvas.height);
+      const pixelSize = pixelSizeRef.current;
+      const sampleWidth = Math.max(1, Math.ceil(canvas.width / pixelSize));
+      const sampleHeight = Math.max(1, Math.ceil(canvas.height / pixelSize));
+      const sampleCanvas = sampleCanvasRef.current ?? document.createElement('canvas');
+      sampleCanvasRef.current = sampleCanvas;
+      sampleCanvas.width = sampleWidth;
+      sampleCanvas.height = sampleHeight;
+
+      const sampleContext = sampleCanvas.getContext('2d');
+      if (!sampleContext) throw new Error('Project sample context unavailable');
+
+      const sourceRatio = sourceImage.naturalWidth / sourceImage.naturalHeight;
+      const targetRatio = sampleWidth / sampleHeight;
+      let drawWidth = sampleWidth;
+      let drawHeight = sampleHeight;
+      let drawX = 0;
+      let drawY = 0;
+
+      if (sourceRatio > targetRatio) {
+        drawHeight = sampleWidth / sourceRatio;
+        drawY = (sampleHeight - drawHeight) / 2;
+      } else {
+        drawWidth = sampleHeight * sourceRatio;
+        drawX = (sampleWidth - drawWidth) / 2;
+      }
+
+      sampleContext.clearRect(0, 0, sampleWidth, sampleHeight);
+      sampleContext.imageSmoothingEnabled = true;
+      sampleContext.filter = `grayscale(${((1 - colorMixRef.current) * 100).toFixed(2)}%)`;
+      sampleContext.drawImage(sourceImage, drawX, drawY, drawWidth, drawHeight);
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.imageSmoothingEnabled = false;
+      context.drawImage(sampleCanvas, 0, 0, canvas.width, canvas.height);
+    } catch {
+      canvasFailedRef.current = true;
+      setFallbackSrc(sourceImage.src);
+    }
   }, []);
 
   const updatePixelation = useCallback(() => {
@@ -1115,13 +1128,79 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
   }, [drawImage]);
 
   useEffect(() => {
-    const image = new Image();
-    sourceImageRef.current = image;
-    image.onload = () => {
-      updatePixelation();
-      drawImage();
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    let disposed = false;
+    let started = false;
+    let controller: AbortController | null = null;
+    let timeout = 0;
+    let retryTimeout = 0;
+    let objectUrl: string | null = null;
+    let observer: IntersectionObserver | null = null;
+
+    const loadImage = async () => {
+      if (started || disposed) return;
+      started = true;
+      observer?.disconnect();
+      // Finish or abort each request before the single retry can start.
+      for (let attempt = 0; attempt < 2 && !disposed; attempt += 1) {
+        controller = new AbortController();
+        timeout = window.setTimeout(() => controller?.abort(), 45000);
+        try {
+          const response = await fetch(src, { signal: controller.signal });
+          if (!response.ok) {
+            await response.body?.cancel();
+            throw new Error('Project image request failed');
+          }
+          const blob = await response.blob();
+          if (disposed) return;
+          objectUrl = URL.createObjectURL(blob);
+          const image = new Image();
+          image.src = objectUrl;
+          const signal = controller.signal;
+          await new Promise<void>((resolve, reject) => {
+            const abortDecode = () => {
+              signal.removeEventListener('abort', abortDecode);
+              image.removeAttribute('src');
+              reject(new Error('Project image decoding timed out'));
+            };
+            if (signal.aborted) {
+              abortDecode();
+              return;
+            }
+            signal.addEventListener('abort', abortDecode, { once: true });
+            image.decode().then(resolve, reject).finally(() => {
+              signal.removeEventListener('abort', abortDecode);
+            });
+          });
+          if (disposed) return;
+          sourceImageRef.current = image;
+          // Measure the current scroll position, including late image arrivals.
+          updatePixelation();
+          drawImage();
+          return;
+        } catch {
+          if (objectUrl) URL.revokeObjectURL(objectUrl);
+          objectUrl = null;
+        } finally {
+          window.clearTimeout(timeout);
+        }
+        if (attempt === 0 && !disposed) {
+          await new Promise<void>((resolve) => {
+            retryTimeout = window.setTimeout(resolve, 500);
+          });
+        }
+      }
     };
-    image.src = src;
+
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) void loadImage();
+      }, { rootMargin: '600px 0px' });
+      observer.observe(canvas);
+    } else {
+      void loadImage();
+    }
 
     let scrollFrame = 0;
     const requestUpdate = () => {
@@ -1136,7 +1215,12 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
     window.addEventListener('resize', requestUpdate);
 
     return () => {
-      image.onload = null;
+      disposed = true;
+      observer?.disconnect();
+      controller?.abort();
+      window.clearTimeout(timeout);
+      window.clearTimeout(retryTimeout);
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
       if (scrollFrame) window.cancelAnimationFrame(scrollFrame);
@@ -1169,13 +1253,28 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
   }, [drawImage, hovered]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="featured-work__image"
-      width={893}
-      height={900}
-      aria-hidden="true"
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        className="featured-work__image"
+        width={893}
+        height={900}
+        aria-hidden="true"
+        style={fallbackSrc ? { display: 'none' } : undefined}
+      />
+      {fallbackSrc && (
+        <img
+          ref={fallbackRef}
+          src={fallbackSrc}
+          className="featured-work__image"
+          width={893}
+          height={900}
+          alt=""
+          aria-hidden="true"
+          style={{ filter: `grayscale(${1 - colorMixRef.current})` }}
+        />
+      )}
+    </>
   );
 }
 
@@ -1331,6 +1430,7 @@ const serviceItems = [
 ];
 
 function ServicesSection() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeService, setActiveService] = useState<number | null>(null);
   const [displayedService, setDisplayedService] = useState<number | null>(null);
   const [imageVisible, setImageVisible] = useState(false);
@@ -1340,12 +1440,28 @@ function ServicesSection() {
   const imageFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    serviceItems.forEach((item) => {
-      const image = new Image();
-      image.src = item.image;
-    });
+    let observer: IntersectionObserver | null = null;
+    let preloaded = false;
+    const preloadImages = () => {
+      if (preloaded) return;
+      preloaded = true;
+      observer?.disconnect();
+      serviceItems.forEach((item) => {
+        const image = new Image();
+        image.src = item.image;
+      });
+    };
+    if ('IntersectionObserver' in window && sectionRef.current) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) preloadImages();
+      }, { rootMargin: '600px 0px' });
+      observer.observe(sectionRef.current);
+    } else {
+      preloadImages();
+    }
 
     return () => {
+      observer?.disconnect();
       if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
       if (imageFrameRef.current) window.cancelAnimationFrame(imageFrameRef.current);
     };
@@ -1427,7 +1543,7 @@ function ServicesSection() {
     - hoverLayerTop;
 
   return (
-    <section className="services-section" aria-labelledby="services-title">
+    <section ref={sectionRef} className="services-section" aria-labelledby="services-title">
       <div className="services-section__stage">
         <p id="services-title" className="services-section__eyebrow">SERVICES · WHAT I DO</p>
 
