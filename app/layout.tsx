@@ -29,8 +29,29 @@ const notoSerifSC = Noto_Serif_SC({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.shuaikangstudio.cn"),
   title: "李帅康 — Visual design",
   description: "Brand, campaign, and operational design.",
+  openGraph: {
+    type: "website",
+    title: "李帅康 — Visual design",
+    description: "Brand, campaign, and operational design.",
+    images: [
+      {
+        url: "/og-cover.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "李帅康 — Visual design 作品集分享封面",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "李帅康 — Visual design",
+    description: "Brand, campaign, and operational design.",
+    images: ["/og-cover.png"],
+  },
 };
 
 export default function RootLayout({
