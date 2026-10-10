@@ -1436,47 +1436,20 @@ function ServicesSection() {
   const [imageVisible, setImageVisible] = useState(false);
   const activeServiceRef = useRef<number | null>(null);
   const displayedServiceRef = useRef<number | null>(null);
-  const imageRequestRef = useRef(0);
   const swapTimerRef = useRef<number | null>(null);
-  const mountedRef = useRef(false);
-  const imageLoadsRef = useRef(new Map<number, Promise<boolean>>());
-
-  const prepareImage = useCallback((index: number) => {
-    const cached = imageLoadsRef.current.get(index);
-    if (cached) return cached;
-    const ready = new Promise<boolean>((resolve) => {
-      const image = new Image();
-      let settled = false;
-      const finish = (success: boolean) => {
-        if (settled) return;
-        settled = true;
-        window.clearTimeout(timeout);
-        image.onload = null;
-        image.onerror = null;
-        if (!success) image.removeAttribute('src');
-        resolve(success);
-      };
-      // A failed or stalled image leaves the last working image in place; no retry loop.
-      const timeout = window.setTimeout(() => finish(false), 15000);
-      image.onload = () => {
-        image.decode().then(() => finish(true), () => finish(false));
-      };
-      image.onerror = () => finish(false);
-      image.src = serviceItems[index].image;
-    });
-    imageLoadsRef.current.set(index, ready);
-    return ready;
-  }, []);
+  const imageFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    mountedRef.current = true;
     let observer: IntersectionObserver | null = null;
     let preloaded = false;
     const preloadImages = () => {
       if (preloaded) return;
       preloaded = true;
       observer?.disconnect();
-      serviceItems.forEach((_, index) => { void prepareImage(index); });
+      serviceItems.forEach((item) => {
+        const image = new Image();
+        image.src = item.image;
+      });
     };
     if ('IntersectionObserver' in window && sectionRef.current) {
       observer = new IntersectionObserver(([entry]) => {
@@ -1488,36 +1461,64 @@ function ServicesSection() {
     }
 
     return () => {
-      mountedRef.current = false;
       observer?.disconnect();
       if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
+      if (imageFrameRef.current) window.cancelAnimationFrame(imageFrameRef.current);
     };
-  }, [prepareImage]);
+  }, []);
 
-  const activateService = (index: number) => {
-    const request = ++imageRequestRef.current;
-    activeServiceRef.current = index;
-    setActiveService(index);
-    if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
-    swapTimerRef.current = null;
-    if (displayedServiceRef.current !== null) setImageVisible(true);
-
-    void prepareImage(index).then((ready) => {
-      if (!ready || !mountedRef.current || imageRequestRef.current !== request
-        || activeServiceRef.current !== index) return;
-      // Keep the same image element and replace its source only after decoding.
-      displayedServiceRef.current = index;
-      setDisplayedService(index);
+  const revealCurrentImage = () => {
+    if (imageFrameRef.current) window.cancelAnimationFrame(imageFrameRef.current);
+    imageFrameRef.current = window.requestAnimationFrame(() => {
       setImageVisible(true);
+      imageFrameRef.current = null;
     });
   };
 
+  const activateService = (index: number) => {
+    activeServiceRef.current = index;
+    setActiveService(index);
+
+    if (swapTimerRef.current) {
+      window.clearTimeout(swapTimerRef.current);
+      swapTimerRef.current = null;
+    }
+
+    if (displayedServiceRef.current === index) {
+      setImageVisible(true);
+      return;
+    }
+
+    if (displayedServiceRef.current === null) {
+      displayedServiceRef.current = index;
+      setDisplayedService(index);
+      setImageVisible(false);
+      revealCurrentImage();
+      return;
+    }
+
+    setImageVisible(false);
+    swapTimerRef.current = window.setTimeout(() => {
+      const nextService = activeServiceRef.current;
+      swapTimerRef.current = null;
+      if (nextService === null) {
+        displayedServiceRef.current = null;
+        setDisplayedService(null);
+        return;
+      }
+
+      displayedServiceRef.current = nextService;
+      setDisplayedService(nextService);
+      revealCurrentImage();
+    }, 90);
+  };
+
   const deactivateServices = () => {
-    imageRequestRef.current += 1;
     activeServiceRef.current = null;
     setActiveService(null);
-    if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
     setImageVisible(false);
+
+    if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
     swapTimerRef.current = window.setTimeout(() => {
       swapTimerRef.current = null;
       if (activeServiceRef.current !== null) return;
