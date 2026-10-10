@@ -1392,6 +1392,8 @@ main#psd-stage {
 
 .services-section__image-media--visible {
   opacity: 1;
+  /* Switching is immediate; the base transition only applies when leaving. */
+  transition: none;
 }
 
 .my-work {
