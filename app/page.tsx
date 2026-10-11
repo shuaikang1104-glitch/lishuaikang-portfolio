@@ -1497,20 +1497,9 @@ function ServicesSection() {
       return;
     }
 
-    setImageVisible(false);
-    swapTimerRef.current = window.setTimeout(() => {
-      const nextService = activeServiceRef.current;
-      swapTimerRef.current = null;
-      if (nextService === null) {
-        displayedServiceRef.current = null;
-        setDisplayedService(null);
-        return;
-      }
-
-      displayedServiceRef.current = nextService;
-      setDisplayedService(nextService);
-      revealCurrentImage();
-    }, 90);
+    displayedServiceRef.current = index;
+    setDisplayedService(index);
+    setImageVisible(true);
   };
 
   const deactivateServices = () => {
