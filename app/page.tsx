@@ -1044,7 +1044,7 @@ function TrustSection() {
 
 const featuredProjects = [
   { brand: 'Dong Jia APP', project: '东家大型春季拍卖会', year: '2021', x: 46, y: 376, src: '/featured-work/work-01-dongjia-auction.png', href: '/projects/everyone-is-a-collector' },
-  { brand: 'Zhu Bingren Tong', project: '朱炳仁铜品牌升级案例', year: '2024', x: 980, y: 376, src: '/featured-work/work-02-zbr-brand-upgrade.png', href: '/projects/zhu-bingren-brand-upgrade' },
+  { brand: 'Zhu Bingren Tong', project: '朱炳仁铜品牌升级案例', year: '2024', x: 980, y: 376, src: '/featured-work/work-02-zbr-brand-upgrade.webp', href: '/projects/zhu-bingren-brand-upgrade' },
   { brand: 'Zhu Bingren Tong', project: '熔铜18周年联合国博展', year: '2024', x: 46, y: 1359, src: '/featured-work/work-03-rongtong-18th-guobo.png', href: '/projects/zhubingren-national-museum' },
   { brand: 'Bi Jian Wen Hua', project: '春晚义乌分会场部分视觉', year: '2025', x: 980, y: 1359, src: '/featured-work/work-04-cctv-spring-festival-yiwu.png', href: '/projects/yiwu-spring-festival-gala' },
 ];
@@ -1423,7 +1423,7 @@ function FeaturedWorkSection() {
 
 const serviceItems = [
   { label: 'Campaign Visual', smallY: 205, largeY: 158, image: '/services/service-campaign-visual.png' },
-  { label: 'Brand Experience', smallY: 342, largeY: 300, image: '/services/service-brand-experience.png' },
+  { label: 'Brand Experience', smallY: 342, largeY: 300, image: '/services/service-brand-experience.webp' },
   { label: 'Visual System', smallY: 479, largeY: 442, image: '/services/service-visual-system.png' },
   { label: 'Exhibition Visual', smallY: 616, largeY: 583, image: '/services/service-exhibition-visual.png' },
   { label: 'Art Direction', smallY: 750, largeY: 710, image: '/services/service-art-direction.png' },
