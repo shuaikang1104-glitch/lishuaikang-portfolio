@@ -608,7 +608,19 @@ function DesignContextSection() {
       playing = true;
       const token = ++generation;
       const font = getComputedStyle(title);
-      await document.fonts.load(`${font.fontWeight} ${font.fontSize} ${font.fontFamily}`, '丨口日目田十匚亠');
+      try {
+        await document.fonts.load(`${font.fontWeight} ${font.fontSize} ${font.fontFamily}`, '丨口日目田十匚亠');
+      } catch {
+        if (!active || token !== generation) return;
+        // Font failure must not leave semantic content in the hidden pending state.
+        section.dataset.motionState = 'complete';
+        section.querySelectorAll<HTMLElement>('[data-copy-state]').forEach((group) => {
+          group.dataset.copyState = 'complete';
+        });
+        playing = false;
+        completed = true;
+        return;
+      }
       await document.fonts.ready;
       if (!active || token !== generation) return;
       buffers.forEach((buffer, index) => {
@@ -1131,7 +1143,11 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
     const canvas = canvasRef.current;
     if (!canvas) return;
     let disposed = false;
-    let started = false;
+    let status: 'idle' | 'loading' | 'ready' | 'failed' = 'idle';
+    let attempts = 0;
+    let inRange = false;
+    let recoverAfter = 0;
+    let recoveryTimer = 0;
     let controller: AbortController | null = null;
     let timeout = 0;
     let retryTimeout = 0;
@@ -1139,11 +1155,12 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
     let observer: IntersectionObserver | null = null;
 
     const loadImage = async () => {
-      if (started || disposed) return;
-      started = true;
-      observer?.disconnect();
+      if (disposed || status === 'loading' || status === 'ready' || attempts >= 4) return;
+      status = 'loading';
       // Finish or abort each request before the single retry can start.
-      for (let attempt = 0; attempt < 2 && !disposed; attempt += 1) {
+      const batchSize = attempts === 0 ? 2 : 1;
+      for (let attempt = 0; attempt < batchSize && !disposed; attempt += 1) {
+        attempts += 1;
         controller = new AbortController();
         timeout = window.setTimeout(() => controller?.abort(), 45000);
         try {
@@ -1175,6 +1192,8 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
           });
           if (disposed) return;
           sourceImageRef.current = image;
+          status = 'ready';
+          observer?.disconnect();
           // Measure the current scroll position, including late image arrivals.
           updatePixelation();
           drawImage();
@@ -1185,22 +1204,42 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
         } finally {
           window.clearTimeout(timeout);
         }
-        if (attempt === 0 && !disposed) {
+        if (attempt + 1 < batchSize && !disposed) {
           await new Promise<void>((resolve) => {
             retryTimeout = window.setTimeout(resolve, 500);
           });
         }
       }
+      if (disposed) return;
+      status = 'failed';
+      recoverAfter = Date.now() + 5000;
+      recover();
+    };
+
+    // Two original attempts, then at most two spaced recovery attempts per mount.
+    const recover = () => {
+      if (disposed || status !== 'failed' || attempts >= 4 || !inRange || !navigator.onLine || recoveryTimer) return;
+      recoveryTimer = window.setTimeout(() => {
+        recoveryTimer = 0;
+        if (inRange && navigator.onLine) void loadImage();
+      }, Math.max(0, recoverAfter - Date.now()));
     };
 
     if ('IntersectionObserver' in window) {
       observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) void loadImage();
+        inRange = entry.isIntersecting;
+        if (!inRange) {
+          window.clearTimeout(recoveryTimer);
+          recoveryTimer = 0;
+        } else if (status === 'idle') void loadImage();
+        else recover();
       }, { rootMargin: '600px 0px' });
       observer.observe(canvas);
     } else {
+      inRange = true;
       void loadImage();
     }
+    window.addEventListener('online', recover);
 
     let scrollFrame = 0;
     const requestUpdate = () => {
@@ -1220,6 +1259,8 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
       controller?.abort();
       window.clearTimeout(timeout);
       window.clearTimeout(retryTimeout);
+      window.clearTimeout(recoveryTimer);
+      window.removeEventListener('online', recover);
       if (objectUrl) URL.revokeObjectURL(objectUrl);
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
@@ -1431,6 +1472,9 @@ const serviceItems = [
 
 function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [readyServices, setReadyServices] = useState<boolean[]>(() => serviceItems.map(() => false));
+  const loadServiceRef = useRef<(index: number) => void>(() => {});
+  const failServiceRef = useRef<(index: number) => void>(() => {});
   const [activeService, setActiveService] = useState<number | null>(null);
   const [displayedService, setDisplayedService] = useState<number | null>(null);
   const [imageVisible, setImageVisible] = useState(false);
@@ -1440,16 +1484,66 @@ function ServicesSection() {
   const imageFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
+    let disposed = false;
+    const resources = serviceItems.map(() => ({
+      status: 'idle' as 'idle' | 'loading' | 'ready' | 'failed',
+      attempts: 0,
+      retryAt: 0,
+      timer: 0,
+      image: null as HTMLImageElement | null,
+    }));
+    const markReady = (index: number, ready: boolean) => {
+      if (disposed) return;
+      setReadyServices((previous) => previous.map((value, i) => i === index ? ready : value));
+    };
+    const retry = (index: number) => {
+      const resource = resources[index];
+      if (disposed || resource.status !== 'failed' || resource.attempts >= 3 || resource.timer || !navigator.onLine) return;
+      resource.timer = window.setTimeout(() => {
+        resource.timer = 0;
+        if (disposed || !navigator.onLine || resource.status !== 'failed') return;
+        resource.status = 'idle';
+        load(index);
+      }, Math.max(0, resource.retryAt - Date.now()));
+    };
+    const fail = (index: number) => {
+      const resource = resources[index];
+      if (disposed || resource.status === 'failed') return;
+      resource.status = 'failed';
+      markReady(index, false);
+      resource.retryAt = Date.now() + (resource.attempts === 1 ? 1500 : 5000);
+      retry(index);
+    };
+    const load = (index: number) => {
+      const resource = resources[index];
+      if (disposed || resource.status === 'loading' || resource.status === 'ready' || resource.attempts >= 3) return;
+      if (resource.status === 'failed') { retry(index); return; }
+      resource.status = 'loading';
+      resource.attempts += 1;
+      const image = new Image();
+      resource.image = image;
+      image.onload = () => {
+        if (disposed || resource.image !== image) return;
+        resource.status = 'ready';
+        markReady(index, true);
+      };
+      image.onerror = () => {
+        if (disposed || resource.image !== image) return;
+        fail(index);
+      };
+      image.src = serviceItems[index].image;
+    };
+    const recover = () => resources.forEach((_, index) => retry(index));
+    loadServiceRef.current = load;
+    failServiceRef.current = fail;
+    window.addEventListener('online', recover);
     let observer: IntersectionObserver | null = null;
     let preloaded = false;
     const preloadImages = () => {
       if (preloaded) return;
       preloaded = true;
       observer?.disconnect();
-      serviceItems.forEach((item) => {
-        const image = new Image();
-        image.src = item.image;
-      });
+      serviceItems.forEach((_, index) => load(index));
     };
     if ('IntersectionObserver' in window && sectionRef.current) {
       observer = new IntersectionObserver(([entry]) => {
@@ -1461,6 +1555,14 @@ function ServicesSection() {
     }
 
     return () => {
+      disposed = true;
+      window.removeEventListener('online', recover);
+      resources.forEach((resource) => {
+        window.clearTimeout(resource.timer);
+        if (resource.image) { resource.image.onload = null; resource.image.onerror = null; }
+      });
+      loadServiceRef.current = () => {};
+      failServiceRef.current = () => {};
       observer?.disconnect();
       if (swapTimerRef.current) window.clearTimeout(swapTimerRef.current);
       if (imageFrameRef.current) window.cancelAnimationFrame(imageFrameRef.current);
@@ -1476,6 +1578,7 @@ function ServicesSection() {
   };
 
   const activateService = (index: number) => {
+    loadServiceRef.current(index);
     activeServiceRef.current = index;
     setActiveService(index);
 
@@ -1572,7 +1675,14 @@ function ServicesSection() {
           {displayedService !== null && (
             <img
               className={`services-section__image-media${imageVisible ? ' services-section__image-media--visible' : ''}`}
-              src={serviceItems[displayedService].image}
+              src={readyServices[displayedService] ? serviceItems[displayedService].image : undefined}
+              style={readyServices[displayedService] ? undefined : { visibility: 'hidden' }}
+              onError={(event) => {
+                if (displayedServiceRef.current === displayedService && event.currentTarget.isConnected
+                  && event.currentTarget.getAttribute('src') === serviceItems[displayedService].image) {
+                  failServiceRef.current(displayedService);
+                }
+              }}
               alt=""
             />
           )}

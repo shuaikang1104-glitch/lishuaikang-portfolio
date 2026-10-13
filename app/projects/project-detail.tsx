@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import RecoverableProjectImage from './recoverable-project-image';
 import Link from 'next/link';
 import { Fragment, type ReactNode } from 'react';
 import CaseMarquee from './zhu-bingren-brand-upgrade/case-marquee';
@@ -56,7 +56,8 @@ export default function ProjectDetail({ project }: { project: ProjectDetailData 
           <Fragment key={artwork.alt}>
             {index > 0 && <hr className={styles.imageDivider} />}
             <figure className={styles.artwork}>
-              <Image
+              <RecoverableProjectImage
+                key={artwork.src}
                 className={styles.originalImage}
                 src={artwork.src}
                 width={artwork.width}
