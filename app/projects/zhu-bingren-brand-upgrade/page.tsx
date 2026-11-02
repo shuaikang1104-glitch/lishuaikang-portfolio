@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 };
 
 type Artwork = { src: string; width: number; height: number; alt: string };
-// Verified source files in numeric portfolio order. Serve the unchanged originals.
-const artworkFiles = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg', '23.jpg'];
+// Verified source files in numeric portfolio order; only 04 uses an optimized delivery copy.
+const artworkFiles = ['01.jpg', '02.jpg', '03.jpg', '04.webp', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg', '23.jpg'];
 const artworks: Artwork[] = artworkFiles.map((file) => ({
   src: `/projects/zhu-bingren/${file}`,
   width: 1920,
   height: 1080,
-  alt: `朱炳仁铜品牌升级案例 · 原稿 ${file.replace('.jpg', '')}`,
+  alt: `朱炳仁铜品牌升级案例 · 原稿 ${file.replace(/\.(jpg|webp)$/, '')}`,
 }));
 
 const project: ProjectDetailData = {

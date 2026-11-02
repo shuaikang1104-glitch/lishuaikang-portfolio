@@ -1055,10 +1055,10 @@ function TrustSection() {
 }
 
 const featuredProjects = [
-  { brand: 'Dong Jia APP', project: '东家大型春季拍卖会', year: '2021', x: 46, y: 376, src: '/featured-work/work-01-dongjia-auction.webp', href: '/projects/everyone-is-a-collector' },
+  { brand: 'Dong Jia APP', project: '东家大型春季拍卖会', year: '2021', x: 46, y: 376, src: '/featured-work/work-01-dongjia-auction.optimized.webp', href: '/projects/everyone-is-a-collector' },
   { brand: 'Zhu Bingren Tong', project: '朱炳仁铜品牌升级案例', year: '2024', x: 980, y: 376, src: '/featured-work/work-02-zbr-brand-upgrade.webp', href: '/projects/zhu-bingren-brand-upgrade' },
   { brand: 'Zhu Bingren Tong', project: '熔铜18周年联合国博展', year: '2024', x: 46, y: 1359, src: '/featured-work/work-03-rongtong-18th-guobo.webp', href: '/projects/zhubingren-national-museum' },
-  { brand: 'Bi Jian Wen Hua', project: '春晚义乌分会场部分视觉', year: '2025', x: 980, y: 1359, src: '/featured-work/work-04-cctv-spring-festival-yiwu.webp', href: '/projects/yiwu-spring-festival-gala' },
+  { brand: 'Bi Jian Wen Hua', project: '春晚义乌分会场部分视觉', year: '2025', x: 980, y: 1359, src: '/featured-work/work-04-cctv-spring-festival-yiwu.optimized.webp', href: '/projects/yiwu-spring-festival-gala' },
 ];
 
 function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean }) {
@@ -1150,6 +1150,7 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
     let recoveryTimer = 0;
     let controller: AbortController | null = null;
     let timeout = 0;
+    let deadlineTimeout = 0;
     let retryTimeout = 0;
     let objectUrl: string | null = null;
     let observer: IntersectionObserver | null = null;
@@ -1161,20 +1162,44 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
       const batchSize = attempts === 0 ? 2 : 1;
       for (let attempt = 0; attempt < batchSize && !disposed; attempt += 1) {
         attempts += 1;
-        controller = new AbortController();
-        timeout = window.setTimeout(() => controller?.abort(), 45000);
+        const requestController = new AbortController();
+        controller = requestController;
+        const armTimeout = (milliseconds: number) => {
+          window.clearTimeout(timeout);
+          timeout = window.setTimeout(() => requestController.abort(), milliseconds);
+        };
+        // Allow slow downloads to finish while bytes arrive; bound stalls and trickle feeds.
+        armTimeout(30000);
+        deadlineTimeout = window.setTimeout(() => requestController.abort(), 300000);
         try {
-          const response = await fetch(src, { signal: controller.signal });
+          const response = await fetch(src, { signal: requestController.signal });
           if (!response.ok) {
             await response.body?.cancel();
             throw new Error('Project image request failed');
           }
-          const blob = await response.blob();
+          if (!response.body) throw new Error('Project image response body unavailable');
+          const reader = response.body.getReader();
+          const chunks: Uint8Array<ArrayBuffer>[] = [];
+          try {
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              if (value.byteLength > 0) {
+                chunks.push(new Uint8Array(value));
+                armTimeout(30000);
+              }
+            }
+          } finally {
+            reader.releaseLock();
+          }
           if (disposed) return;
+          const blob = new Blob(chunks, { type: response.headers.get('content-type') || 'image/webp' });
+          // Decode has its own short deadline, independent of transfer progress.
+          armTimeout(15000);
           objectUrl = URL.createObjectURL(blob);
           const image = new Image();
           image.src = objectUrl;
-          const signal = controller.signal;
+          const signal = requestController.signal;
           await new Promise<void>((resolve, reject) => {
             const abortDecode = () => {
               signal.removeEventListener('abort', abortDecode);
@@ -1203,6 +1228,7 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
           objectUrl = null;
         } finally {
           window.clearTimeout(timeout);
+          window.clearTimeout(deadlineTimeout);
         }
         if (attempt + 1 < batchSize && !disposed) {
           await new Promise<void>((resolve) => {
@@ -1258,6 +1284,7 @@ function PixelatedProjectImage({ src, hovered }: { src: string; hovered: boolean
       observer?.disconnect();
       controller?.abort();
       window.clearTimeout(timeout);
+      window.clearTimeout(deadlineTimeout);
       window.clearTimeout(retryTimeout);
       window.clearTimeout(recoveryTimer);
       window.removeEventListener('online', recover);
